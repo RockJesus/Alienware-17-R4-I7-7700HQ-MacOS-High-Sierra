@@ -36,10 +36,14 @@
 		</array>
 		<key>DSDT</key>
 		<dict>
+			<key>DropOEM_DSM</key>
+			<false/>
 			<key>Fixes</key>
 			<dict>
 				<key>#Comment-IRQ Fix</key>
 				<string>The following fixes may be needed for onboard audio/USB/etc</string>
+				<key>AddHDMI_8000000</key>
+				<true/>
 				<key>FIX_RTC_20000</key>
 				<true/>
 				<key>FIX_TMR_40000</key>
@@ -51,6 +55,8 @@
 				<key>FixHeaders_20000000</key>
 				<true/>
 				<key>FixIPIC_0040</key>
+				<true/>
+				<key>FixShutdown_0004</key>
 				<true/>
 			</dict>
 			<key>Patches</key>
@@ -270,10 +276,6 @@
 				<string>DMAR</string>
 			</dict>
 		</array>
-		<key>HaltEnabler</key>
-		<true/>
-		<key>PatchAPIC</key>
-		<true/>
 		<key>SSDT</key>
 		<dict>
 			<key>DropOem</key>
@@ -290,7 +292,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>-v dart=0 nv_disable=1 kext-dev-mode=1 -disablegfxfirmware</string>
+		<string>dart=0 nv_disable=1 kext-dev-mode=1 -disablegfxfirmware</string>
 		<key>DefaultLoader</key>
 		<string>bootmgfw.efi</string>
 		<key>DefaultVolume</key>
@@ -304,7 +306,7 @@
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
-		<integer>5</integer>
+		<integer>3</integer>
 		<key>XMPDetection</key>
 		<false/>
 	</dict>
@@ -313,7 +315,7 @@
 		<key>HWPEnable</key>
 		<true/>
 		<key>UseARTFrequency</key>
-		<true/>
+		<false/>
 	</dict>
 	<key>Devices</key>
 	<dict>
@@ -368,7 +370,7 @@
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
-			<string>9</string>
+			<string>11</string>
 			<key>ResetHDA</key>
 			<true/>
 		</dict>
@@ -389,10 +391,6 @@
 		<key>UseIntelHDMI</key>
 		<true/>
 	</dict>
-	<key>DisableDrivers</key>
-	<array>
-		<string>VBoxHfs</string>
-	</array>
 	<key>GUI</key>
 	<dict>
 		<key>#ScreenResolution</key>
@@ -434,6 +432,7 @@
 		<key>Hide</key>
 		<array>
 			<string>Preboot</string>
+			<string>Recovery</string>
 		</array>
 		<key>Mouse</key>
 		<dict>
@@ -489,7 +488,7 @@
 	<key>KernelAndKextPatches</key>
 	<dict>
 		<key>AppleIntelCPUPM</key>
-		<true/>
+		<false/>
 		<key>AppleRTC</key>
 		<true/>
 		<key>DellSMBIOSPatch</key>
@@ -497,15 +496,12 @@
 		<key>ForceKextsToLoad</key>
 		<array>
 			<string>\System\Library\Extensions\IONetworkingFamily.kext</string>
-			<string>RT2870USBWirelessDriver.kext</string>
-			<string>AppleSMCPDRC.kext</string>
-			<string>IOPlatformPluginFamily.kext</string>
-			<string>\System\Library\Extensions\IOPlatformPluginFamily.kext</string>
+			<string>\System\Library\Extensions\RT2870USBWirelessDriver.kext</string>
 		</array>
 		<key>KernelLapic</key>
-		<true/>
+		<false/>
 		<key>KernelPm</key>
-		<true/>
+		<false/>
 		<key>KernelToPatch</key>
 		<array>
 			<dict>
@@ -529,7 +525,7 @@
 				<key>Comment</key>
 				<string>0x591b0000, 32MB BIOS, 19MB framebuffer 9MB cursor bytes (credit RehabMan)</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				AABgAgAAUAE=
@@ -545,7 +541,7 @@
 				<key>Comment</key>
 				<string>0x591b0000, 0105 instead of 0306, HDMI</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				AgQKAAAIAACHAQAAAwYKAAAEAACHAQAA/wAAAAEAAAAg
@@ -563,7 +559,7 @@
 				<key>Comment</key>
 				<string>Enable TRIM for SSD</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				AEFQUExFIFNTRAA=
@@ -579,7 +575,7 @@
 				<key>Comment</key>
 				<string>ex smbios hdmi</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				MDMxQjY4NzRDRjdGNjQyQQ==
@@ -663,7 +659,7 @@
 				<key>Comment</key>
 				<string>Disable minStolenSize less or equal fStolenMemorySize assertion, 10.13 (based on Austere.J patch by PMheart)</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				TIldwHZG
@@ -705,6 +701,54 @@
 				<key>Replace</key>
 				<data>
 				AQAA6yI=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>bt o f 1</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				ODY4MA==
+				</data>
+				<key>Name</key>
+				<string>BroadcomBluetoothHostControllerUSBTransport</string>
+				<key>Replace</key>
+				<data>
+				NTgxMTM=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>bt o f 2</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				MjY1Mg==
+				</data>
+				<key>Name</key>
+				<string>BroadcomBluetoothHostControllerUSBTransport</string>
+				<key>Replace</key>
+				<data>
+				MzMxNQ==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>applelpc</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				cGNpODA4NiwyODEx
+				</data>
+				<key>Name</key>
+				<string>AppleLPC</string>
+				<key>Replace</key>
+				<data>
+				cGNpODA4NixBMTU0
 				</data>
 			</dict>
 		</array>
@@ -753,44 +797,7 @@
 		<key>Memory</key>
 		<dict>
 			<key>Channels</key>
-			<integer>2</integer>
-			<key>Modules</key>
-			<array>
-				<dict>
-					<key>Frequency</key>
-					<integer>2400</integer>
-					<key>Part</key>
-					<string>HMA81GS6AFR8N-UH</string>
-					<key>Serial</key>
-					<string>02090A090C0E0A0D</string>
-					<key>Size</key>
-					<integer>8192</integer>
-					<key>Slot</key>
-					<integer>1</integer>
-					<key>Type</key>
-					<string>DDR4</string>
-					<key>Vendor</key>
-					<string>SK Hynix</string>
-				</dict>
-				<dict>
-					<key>Frequency</key>
-					<integer>2400</integer>
-					<key>Part</key>
-					<string>HMA81GS6AFR8N-UH</string>
-					<key>Serial</key>
-					<string>02090A090C0E0E02</string>
-					<key>Size</key>
-					<integer>8192</integer>
-					<key>Slot</key>
-					<integer>3</integer>
-					<key>Type</key>
-					<string>DDR4</string>
-					<key>Vendor</key>
-					<string>SK Hynix</string>
-				</dict>
-			</array>
-			<key>SlotCount</key>
-			<integer>4</integer>
+			<integer>0</integer>
 		</dict>
 		<key>Mobile</key>
 		<true/>
@@ -810,7 +817,7 @@
 		<key>#BacklightLevel</key>
 		<integer>0</integer>
 		<key>InjectKexts</key>
-		<string>Detect</string>
+		<string>Yes</string>
 		<key>InjectSystemID</key>
 		<true/>
 	</dict>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>16E195</string>
+	<string>16G29</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>6.25.1426</string>
+	<string>6.26.1440</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -25,11 +25,11 @@
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1426</string>
+	<string>1440</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>8E162</string>
+	<string>8E3004b</string>
 	<key>DTPlatformVersion</key>
 	<string>GM</string>
 	<key>DTSDKBuild</key>
@@ -37,42 +37,80 @@
 	<key>DTSDKName</key>
 	<string>macosx10.12</string>
 	<key>DTXcode</key>
-	<string>0830</string>
+	<string>0833</string>
 	<key>DTXcodeBuild</key>
-	<string>8E162</string>
+	<string>8E3004b</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>PID 8680 0x21E8 VID 2652 0xA5C</key>
+		<key>AppleLPC_WCP</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
-			<string>com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport</string>
-			<key>Dongles</key>
-			<dict>
-				<key>GMYLE</key>
-				<string>Micro Nano</string>
-				<key>IOGear</key>
-				<string>GBU-521</string>
-				<key>Kinivo</key>
-				<string>BTD-400</string>
-				<key>MediaLink</key>
-				<string>PANBT400 (4.0)</string>
-				<key>MediaLink 2</key>
-				<string>MUA-BA3</string>
-				<key>Plugable</key>
-				<string>4.0 LE</string>
-				<key>Targus</key>
-				<string>ACB10US 4.0</string>
-				<key>UtechSmart</key>
-				<string>4.0 (BCM20702)</string>
-			</dict>
+			<string>com.apple.driver.AppleLPC</string>
 			<key>IOClass</key>
-			<string>BroadcomBluetoothHostControllerUSBTransport</string>
+			<string>AppleLPC</string>
+			<key>IONameMatch</key>
+			<array>
+				<string>pci8086,a154</string>
+				<string>pci8086,9cc2</string>
+				<string>pci8086,9cc3</string>
+				<string>pci8086,9cc5</string>
+				<string>pci8086,9cc6</string>
+				<string>pci8086,9cc7</string>
+				<string>pci8086,9cc9</string>
+			</array>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
 			<key>IOProviderClass</key>
-			<string>IOUSBHostDevice</string>
-			<key>idProduct</key>
-			<integer>58113</integer>
-			<key>idVendor</key>
-			<integer>3315</integer>
+			<string>IOPCIDevice</string>
+			<key>LCTL_Offset</key>
+			<integer>80</integer>
+		</dict>
+		<key>AppleLPC_SB</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleLPC</string>
+			<key>IOClass</key>
+			<string>AppleLPC</string>
+			<key>IONameMatch</key>
+			<array>
+				<string>pci8086,a154</string>
+				<string>pci8086,8c44</string>
+				<string>pci8086,8cc3</string>
+				<string>pci8086,8c4b</string>
+				<string>pci8086,1c42</string>
+				<string>pci8086,1c44</string>
+				<string>pci8086,1c4e</string>
+				<string>pci8086,1c4c</string>
+				<string>pci8086,1c50</string>
+				<string>pci8086,1c4a</string>
+				<string>pci8086,1c46</string>
+				<string>pci8086,1c5c</string>
+				<string>pci8086,1c52</string>
+				<string>pci8086,1c54</string>
+				<string>pci8086,1c56</string>
+				<string>pci8086,1c43</string>
+				<string>pci8086,1c4f</string>
+				<string>pci8086,1c47</string>
+				<string>pci8086,1c4b</string>
+				<string>pci8086,1c49</string>
+				<string>pci8086,1c41</string>
+				<string>pci8086,1c4d</string>
+				<string>pci8086,1d41</string>
+				<string>pci8086,1e42</string>
+				<string>pci8086,1e55</string>
+				<string>pci8086,1e58</string>
+				<string>pci8086,1e57</string>
+				<string>pci8086,1e59</string>
+				<string>pci8086,1e5d</string>
+				<string>pci8086,1e43</string>
+				<string>pci8086,1e56</string>
+			</array>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>LCTL_Offset</key>
+			<integer>8616</integer>
 		</dict>
 		<key>AppleLPC</key>
 		<dict>
@@ -109,6 +147,38 @@
 			<string>IOPCIDevice</string>
 			<key>LCTL_Offset</key>
 			<integer>424</integer>
+		</dict>
+		<key>PID 8680 0x21E8 VID 2652 0xA5C</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport</string>
+			<key>Dongles</key>
+			<dict>
+				<key>GMYLE</key>
+				<string>Micro Nano</string>
+				<key>IOGear</key>
+				<string>GBU-521</string>
+				<key>Kinivo</key>
+				<string>BTD-400</string>
+				<key>MediaLink</key>
+				<string>PANBT400 (4.0)</string>
+				<key>MediaLink 2</key>
+				<string>MUA-BA3</string>
+				<key>Plugable</key>
+				<string>4.0 LE</string>
+				<key>Targus</key>
+				<string>ACB10US 4.0</string>
+				<key>UtechSmart</key>
+				<string>4.0 (BCM20702)</string>
+			</dict>
+			<key>IOClass</key>
+			<string>BroadcomBluetoothHostControllerUSBTransport</string>
+			<key>IOProviderClass</key>
+			<string>IOUSBHostDevice</string>
+			<key>idProduct</key>
+			<integer>58113</integer>
+			<key>idVendor</key>
+			<integer>3315</integer>
 		</dict>
 		<key>FakeSMC</key>
 		<dict>
@@ -270,9 +340,9 @@
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2015 netkas. All rights reserved.</string>
+	<string>Copyright © 2017 netkas. All rights reserved.</string>
 	<key>OSBundleCompatibleVersion</key>
-	<string>1212</string>
+	<string>1429</string>
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>com.apple.iokit.IOACPIFamily</key>
