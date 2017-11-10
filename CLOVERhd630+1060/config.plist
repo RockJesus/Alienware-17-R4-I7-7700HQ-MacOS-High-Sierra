@@ -12,17 +12,15 @@
 			<false/>
 			<key>Fixes</key>
 			<dict>
-				<key>FIX_RTC_20000</key>
+				<key>FixHDA</key>
 				<true/>
-				<key>FIX_WAK_200000</key>
+				<key>FixHeaders</key>
 				<true/>
-				<key>FixHPET_0010</key>
+				<key>FixRTC</key>
 				<true/>
-				<key>FixHeaders_20000000</key>
+				<key>FixTMR</key>
 				<true/>
-				<key>FixIPIC_0040</key>
-				<true/>
-				<key>FixShutdown_0004</key>
+				<key>FixWAK</key>
 				<true/>
 			</dict>
 			<key>Patches</key>
@@ -59,7 +57,7 @@
 					<key>Comment</key>
 					<string>change SAT0 to SATA</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					U0FUMA==
@@ -67,20 +65,6 @@
 					<key>Replace</key>
 					<data>
 					U0FUQQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change MEI to IMEI</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					TUVJXw==
-					</data>
-					<key>Replace</key>
-					<data>
-					SU1FSQ==
 					</data>
 				</dict>
 				<dict>
@@ -101,7 +85,7 @@
 					<key>Comment</key>
 					<string>ALSD ALS0</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					QUxTRA==
@@ -129,7 +113,7 @@
 					<key>Comment</key>
 					<string>change H_EC to EC</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					SF9FQw==
@@ -185,7 +169,7 @@
 					<key>Comment</key>
 					<string>change LPC to LPCB</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					TFBDXw==
@@ -199,7 +183,7 @@
 					<key>Comment</key>
 					<string>change Method(_PTS,1,N) to ZPTS, pair with SSDT-PTSWAK.aml</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					X1BUUwE=
@@ -213,7 +197,7 @@
 					<key>Comment</key>
 					<string>change Method(_PTS,1,S) to ZPTS, pair with SSDT-PTSWAK.aml</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					X1BUUwk=
@@ -227,7 +211,7 @@
 					<key>Comment</key>
 					<string>change Method(_WAK,1,N) to ZWAK, pair with SSDT-PTSWAK.aml</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					X1dBSwE=
@@ -241,7 +225,7 @@
 					<key>Comment</key>
 					<string>change Method(_WAK,1,S) to ZWAK, pair with SSDT-PTSWAK.aml</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					X1dBSwk=
@@ -269,7 +253,7 @@
 					<key>Comment</key>
 					<string>change LANC Method(_PRW,0,S) to Method(XPRW,0,..), pair with SSDT-LANC_PRW.aml</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					AAAZABQfX1BSVwg=
@@ -283,6 +267,13 @@
 			<key>ReuseFFFF</key>
 			<false/>
 		</dict>
+		<key>DropTables</key>
+		<array>
+			<dict>
+				<key>Signature</key>
+				<string>DMAR</string>
+			</dict>
+		</array>
 		<key>SSDT</key>
 		<dict>
 			<key>DropOem</key>
@@ -294,22 +285,18 @@
 				<key>PStates</key>
 				<false/>
 			</dict>
-			<key>PluginType</key>
-			<string>1</string>
 		</dict>
 	</dict>
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>-v kext-dev-mode=1 -disablegfxfirmware</string>
+		<string>-v -disablegfxfirmware -f</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultLoader</key>
 		<string>bootmgfw.efi</string>
 		<key>DefaultVolume</key>
 		<string>ESP</string>
-		<key>HibernationFixup</key>
-		<true/>
 		<key>Legacy</key>
 		<string>PBR</string>
 		<key>NoEarlyProgress</key>
@@ -320,11 +307,6 @@
 		<integer>3</integer>
 		<key>XMPDetection</key>
 		<false/>
-	</dict>
-	<key>CPU</key>
-	<dict>
-		<key>HWPEnable</key>
-		<true/>
 	</dict>
 	<key>Devices</key>
 	<dict>
@@ -373,32 +355,12 @@
 					<key>VolumeType</key>
 					<string>Internal</string>
 				</dict>
-				<dict>
-					<key>Disabled</key>
-					<false/>
-					<key>FullTitle</key>
-					<string>uefi</string>
-					<key>Hidden</key>
-					<true/>
-					<key>Ignore</key>
-					<false/>
-					<key>Type</key>
-					<string>Windows</string>
-					<key>Volume</key>
-					<string>HD(1,GPT,E17DEE3C-86F0-4F67-AD88-ABB50249ACAB,0x800,0x113000)</string>
-					<key>VolumeType</key>
-					<string>External</string>
-				</dict>
 			</array>
 		</dict>
 		<key>Hide</key>
 		<array>
-			<string>BOOTX64.EFI</string>
-			<string>Windows</string>
 			<string>preboot</string>
 			<string>recovery</string>
-			<string>1013</string>
-			<string>10131</string>
 		</array>
 		<key>Language</key>
 		<string>zh_CN:0</string>
@@ -427,25 +389,14 @@
 		<key>ScreenResolution</key>
 		<string>1920x1080</string>
 		<key>Theme</key>
-		<string>1</string>
+		<string>0</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
 		<key>EDID</key>
 		<dict>
-			<key>Custom</key>
-			<data>
-			AP///////wAGr50QAAAAAAEZAQSVJhV4AtKVo1ZSnScLUFQAAAAB
-			AQEBAQEBAQEBAQEBAQEB+jeA3HA4JEAQED4AfdYQAAAa2CyA3HA4
-			JEAQED4AfdYQAAAaAAAA/gBZMTQ3VIBCMTczSEFOAAAAAAABQSGe
-			ABAAAAoBCiAgAGo=
-			</data>
 			<key>Inject</key>
-			<true/>
-			<key>ProductID</key>
-			<string>0x109d</string>
-			<key>VendorID</key>
-			<string>0x06af</string>
+			<false/>
 		</dict>
 		<key>Inject</key>
 		<dict>
@@ -454,7 +405,7 @@
 			<key>Intel</key>
 			<true/>
 			<key>NVidia</key>
-			<false/>
+			<true/>
 		</dict>
 		<key>ig-platform-id</key>
 		<string>0x591b0000</string>
@@ -467,23 +418,6 @@
 		<true/>
 		<key>KernelPm</key>
 		<false/>
-		<key>KernelToPatch</key>
-		<array>
-			<dict>
-				<key>Comment</key>
-				<string>MSR 0xE2 _xcpm_idle instant reboot(c) Pike R. Alpha</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				ILniAAAADzA=
-				</data>
-				<key>Replace</key>
-				<data>
-				ILniAAAAkJA=
-				</data>
-			</dict>
-		</array>
 		<key>KextsToPatch</key>
 		<array>
 			<dict>
@@ -568,6 +502,22 @@
 				RiV1VHh4eHgA
 				</data>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>change 15 port limit to 26 in AppleUSBXHCIPCI</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				g72M/v//EA==
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCIPCI</string>
+				<key>Replace</key>
+				<data>
+				g72M/v//Gw==
+				</data>
+			</dict>
 		</array>
 	</dict>
 	<key>RtVariables</key>
@@ -590,11 +540,11 @@
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02706300GUF0V5FB</string>
+		<string>C02740270J9DKG1UE</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
-		<string>MacBookPro14,3</string>
+		<string>1.0</string>
 		<key>ChassisAssetTag</key>
 		<string>MacBook-Aluminum</string>
 		<key>ChassisManufacturer</key>
@@ -618,7 +568,7 @@
 		<key>ProductName</key>
 		<string>MacBookPro14,3</string>
 		<key>SerialNumber</key>
-		<string>C02T71K9HTD5</string>
+		<string>C02VH1I2HTD5</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>

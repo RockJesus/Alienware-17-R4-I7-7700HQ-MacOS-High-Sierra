@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.noname.T420.BlueToothInjector</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>T420BlueToothInjector</string>
+	<key>CFBundlePackageType</key>
+	<string>KEXT</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0.0</string>
+	<key>IOKitPersonalities</key>
+	<dict>
+		<key>PID 8680 0x21E8 VID 2652 0xA5C</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport</string>
+			<key>Dongles</key>
+			<dict>
+				<key>GMYLE</key>
+				<string>Micro Nano</string>
+				<key>IOGear</key>
+				<string>GBU-521</string>
+				<key>Kinivo</key>
+				<string>BTD-400</string>
+				<key>MediaLink</key>
+				<string>PANBT400 (4.0)</string>
+				<key>MediaLink 2</key>
+				<string>MUA-BA3</string>
+				<key>Plugable</key>
+				<string>4.0 LE</string>
+				<key>Targus</key>
+				<string>ACB10US 4.0</string>
+				<key>UtechSmart</key>
+				<string>4.0 (BCM20702)</string>
+			</dict>
+			<key>IOClass</key>
+			<string>BroadcomBluetoothHostControllerUSBTransport</string>
+			<key>IOProviderClass</key>
+			<string>IOUSBHostDevice</string>
+			<key>idProduct</key>
+			<integer>58113</integer>
+			<key>idVendor</key>
+			<integer>3315</integer>
+		</dict>
+	</dict>
+</dict>
+</plist>

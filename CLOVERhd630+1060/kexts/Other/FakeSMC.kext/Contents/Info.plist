@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>16G29</string>
+	<string>17B35a</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>6.26.1440</string>
+	<string>6.26-322-g1b20eab7.1765</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -25,7 +25,7 @@
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1440</string>
+	<string>1765</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
@@ -33,47 +33,15 @@
 	<key>DTPlatformVersion</key>
 	<string>GM</string>
 	<key>DTSDKBuild</key>
-	<string>16E185</string>
+	<string>12D75</string>
 	<key>DTSDKName</key>
-	<string>macosx10.12</string>
+	<string>macosx10.8</string>
 	<key>DTXcode</key>
 	<string>0833</string>
 	<key>DTXcodeBuild</key>
 	<string>8E3004b</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>PID 8680 0x21E8 VID 2652 0xA5C</key>
-		<dict>
-			<key>CFBundleIdentifier</key>
-			<string>com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport</string>
-			<key>Dongles</key>
-			<dict>
-				<key>GMYLE</key>
-				<string>Micro Nano</string>
-				<key>IOGear</key>
-				<string>GBU-521</string>
-				<key>Kinivo</key>
-				<string>BTD-400</string>
-				<key>MediaLink</key>
-				<string>PANBT400 (4.0)</string>
-				<key>MediaLink 2</key>
-				<string>MUA-BA3</string>
-				<key>Plugable</key>
-				<string>4.0 LE</string>
-				<key>Targus</key>
-				<string>ACB10US 4.0</string>
-				<key>UtechSmart</key>
-				<string>4.0 (BCM20702)</string>
-			</dict>
-			<key>IOClass</key>
-			<string>BroadcomBluetoothHostControllerUSBTransport</string>
-			<key>IOProviderClass</key>
-			<string>IOUSBHostDevice</string>
-			<key>idProduct</key>
-			<integer>58113</integer>
-			<key>idVendor</key>
-			<integer>3315</integer>
-		</dict>
 		<key>FakeSMC</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -108,72 +76,159 @@
 						<string>ch8*</string>
 					</array>
 				</dict>
+				<key>ExceptionKeys</key>
+				<dict>
+					<key>CLKH</key>
+					<integer>1</integer>
+					<key>CLKT</key>
+					<integer>1</integer>
+					<key>MSDW</key>
+					<integer>1</integer>
+					<key>NATJ</key>
+					<integer>1</integer>
+					<key>NATi</key>
+					<integer>1</integer>
+					<key>NTOK</key>
+					<integer>1</integer>
+					<key>WKTP</key>
+					<integer>0</integer>
+				</dict>
 				<key>Keys</key>
 				<dict>
 					<key>$Adr</key>
 					<array>
 						<string>ui32</string>
-						<data>AAADAA==</data>
+						<data>
+						AAADAA==
+						</data>
 					</array>
 					<key>$Num</key>
 					<array>
 						<string>ui8</string>
-						<data>AQ==</data>
+						<data>
+						AQ==
+						</data>
+					</array>
+					<key>ACID</key>
+					<array>
+						<string>ch8*</string>
+						<data>
+						hfwETdgSevQ=
+						</data>
+					</array>
+					<key>ALI0</key>
+					<array>
+						<string>{ali</string>
+						<data>
+						BwECAA==
+						</data>
+					</array>
+					<key>ALRV</key>
+					<array>
+						<string>ui16</string>
+						<data>
+						AAE=
+						</data>
+					</array>
+					<key>ALV0</key>
+					<array>
+						<string>{alv</string>
+						<data>
+						ARAGdQEgALYO4A==
+						</data>
 					</array>
 					<key>FNum</key>
 					<array>
 						<string>ui8</string>
-						<data>AA==</data>
+						<data>
+						AA==
+						</data>
 					</array>
 					<key>LsNM</key>
 					<array>
 						<string>ui8</string>
-						<data>AQ==</data>
+						<data>
+						AQ==
+						</data>
 					</array>
 					<key>LsbV</key>
 					<array>
 						<string>{rev</string>
-						<data>AQQKAAY=</data>
+						<data>
+						AQQKAAY=
+						</data>
+					</array>
+					<key>MSLD</key>
+					<array>
+						<string>ui8 </string>
+						<data>
+						AA==
+						</data>
 					</array>
 					<key>MSSD</key>
 					<array>
 						<string>si8</string>
-						<data>BQ==</data>
+						<data>
+						BQ==
+						</data>
 					</array>
 					<key>MSSP</key>
 					<array>
 						<string>si8</string>
-						<data>BQ==</data>
+						<data>
+						BQ==
+						</data>
 					</array>
 					<key>NATJ</key>
 					<array>
 						<string>ui8</string>
-						<data>AA==</data>
+						<data>
+						AA==
+						</data>
 					</array>
 					<key>OSK0</key>
 					<array>
 						<string>ch8*</string>
-						<data>b3VyaGFyZHdvcmtieXRoZXNld29yZHNndWFyZGVkcGw=</data>
+						<data>
+						b3VyaGFyZHdvcmtieXRoZXNld29y
+						ZHNndWFyZGVkcGw=
+						</data>
 					</array>
 					<key>OSK1</key>
 					<array>
 						<string>ch8*</string>
-						<data>ZWFzZWRvbnRzdGVhbChjKUFwcGxlQ29tcHV0ZXJJbmM=</data>
+						<data>
+						ZWFzZWRvbnRzdGVhbChjKUFwcGxl
+						Q29tcHV0ZXJJbmM=
+						</data>
 					</array>
 					<key>REV </key>
 					<array>
 						<string>{rev</string>
-						<data>ATAPAAAD</data>
+						<data>
+						ATAPAAAD
+						</data>
+					</array>
+					<key>RMde</key>
+					<array>
+						<string>char</string>
+						<data>
+						QQ==
+						</data>
 					</array>
 					<key>RVBF</key>
 					<array>
 						<string>{rev</string>
-						<data>ATAPAAAD</data>
+						<data>
+						ATAPAAAD
+						</data>
 					</array>
 					<key>RVUF</key>
 					<array>
 						<string>{rev</string>
-						<data>ATAPAAAD</data>
+						<data>
+						ATAPAAAD
+						</data>
 					</array>
 				</dict>
 				<key>Types</key>
@@ -216,6 +271,10 @@
 			<string>AppleACPIPlatformExpert</string>
 			<key>IOResourceMatch</key>
 			<string>FakeSMCKeyStore</string>
+			<key>RM,Build</key>
+			<string>Release-rehabman</string>
+			<key>RM,Version</key>
+			<string>FakeSMC 1765</string>
 		</dict>
 		<key>FakeSMCKeyStore</key>
 		<dict>
@@ -254,5 +313,7 @@
 	</dict>
 	<key>OSBundleRequired</key>
 	<string>Root</string>
+	<key>Source Code</key>
+	<string>"https://github.com/RehabMan/OS-X-FakeSMC-kozlek.git"</string>
 </dict>
 </plist>
