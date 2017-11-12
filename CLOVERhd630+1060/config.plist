@@ -12,17 +12,11 @@
 			<false/>
 			<key>Fixes</key>
 			<dict>
-				<key>FixHDA</key>
-				<true/>
-				<key>FixHeaders</key>
-				<true/>
-				<key>FixRTC</key>
-				<true/>
-				<key>FixTMR</key>
-				<true/>
-				<key>FixWAK</key>
+				<key>FixShutdown</key>
 				<true/>
 			</dict>
+			<key>Name</key>
+			<string>DSDT.aml</string>
 			<key>Patches</key>
 			<array>
 				<dict>
@@ -293,10 +287,8 @@
 		<string>-v -disablegfxfirmware -f</string>
 		<key>Debug</key>
 		<false/>
-		<key>DefaultLoader</key>
-		<string>bootmgfw.efi</string>
 		<key>DefaultVolume</key>
-		<string>ESP</string>
+		<string>UHIGH</string>
 		<key>Legacy</key>
 		<string>PBR</string>
 		<key>NoEarlyProgress</key>
@@ -312,8 +304,6 @@
 	<dict>
 		<key>Audio</key>
 		<dict>
-			<key>Inject</key>
-			<string>11</string>
 			<key>ResetHDA</key>
 			<true/>
 		</dict>
@@ -403,12 +393,10 @@
 			<key>ATI</key>
 			<false/>
 			<key>Intel</key>
-			<true/>
+			<false/>
 			<key>NVidia</key>
 			<true/>
 		</dict>
-		<key>ig-platform-id</key>
-		<string>0x591b0000</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>

@@ -26,7 +26,6 @@ DefinitionBlock ("", "SSDT", 2, "APPLE ", "RJ-ALL", 0x00001000)
     External (_SB_.PCI0.IGPU, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.PEG0, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.PEG0.PEGP, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.PEG0.GFX0, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.PEG2, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.PEG2.PEGP, DeviceObj)    // (from opcode)
     External (_SB_.PCI0.PEG2.PEGP.PCIB.TBLT, DeviceObj)    // (from opcode)
@@ -112,7 +111,7 @@ DefinitionBlock ("", "SSDT", 2, "APPLE ", "RJ-ALL", 0x00001000)
         {
             Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
             {
-                Store (Package (0x14)
+                Store (Package (0x12)
                     {
                         "AAPL,slot-name", 
                         "Built In", 
@@ -147,12 +146,6 @@ DefinitionBlock ("", "SSDT", 2, "APPLE ", "RJ-ALL", 0x00001000)
                         {
                             "onboard-1"
                         },
-                        
-                        "@0,connector-type", 
-                     Buffer (0x04)
-                     {
-                          0x00, 0x04, 0x00, 0x00                         
-                     }, 
                         
                         "vendor-id", 
                         Buffer (0x04)
@@ -333,7 +326,7 @@ DefinitionBlock ("", "SSDT", 2, "APPLE ", "RJ-ALL", 0x00001000)
             }
         }
 
-        Scope (\_SB.PCI0.PEG0.GFX0)
+        Scope (\_SB.PCI0.PEG0.PEGP)
         {
             Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
             {
