@@ -4,6 +4,8 @@
 <dict>
 	<key>ACPI</key>
 	<dict>
+		<key>AutoMerge</key>
+		<true/>
 		<key>DSDT</key>
 		<dict>
 			<key>Debug</key>
@@ -51,7 +53,7 @@
 					<key>Comment</key>
 					<string>change SAT0 to SATA</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					U0FUMA==
@@ -91,7 +93,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>_PRW XPRW</string>
+					<string>_PRW UPRW</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -100,7 +102,7 @@
 					</data>
 					<key>Replace</key>
 					<data>
-					WFBSVw==
+					VVBSVw==
 					</data>
 				</dict>
 				<dict>
@@ -121,7 +123,7 @@
 					<key>Comment</key>
 					<string>change _OSI to XOSI, pair with SSDT-XOSI.aml</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					X09TSQ==
@@ -233,7 +235,7 @@
 					<key>Comment</key>
 					<string>change Method(GPRW,2,N) to XPRW, pair with SSDT-GPRW.aml</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					R1BSVwI=
@@ -257,6 +259,34 @@
 					AAAZABQfWFBSVwg=
 					</data>
 				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>ec0 ec</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					RUMwXw==
+					</data>
+					<key>Replace</key>
+					<data>
+					RUNfXw==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>pegp gfx0</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					UEVHUA==
+					</data>
+					<key>Replace</key>
+					<data>
+					R0ZYMA==
+					</data>
+				</dict>
 			</array>
 			<key>ReuseFFFF</key>
 			<false/>
@@ -273,7 +303,29 @@
 				<key>TableId</key>
 				<string>xh_rvp11</string>
 			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>MATS</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>MACH</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>BGRT</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>MCFG</string>
+			</dict>
 		</array>
+		<key>FixHeaders</key>
+		<true/>
+		<key>ResetAddress</key>
+		<string>0xCF9</string>
+		<key>ResetValue</key>
+		<string>0x6</string>
 		<key>SSDT</key>
 		<dict>
 			<key>DropOem</key>
@@ -290,13 +342,15 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>-v -disablegfxfirmware -f</string>
+		<string>-disablegfxfirmware abm_firstpolldelay=16000 nvda_drv=1</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
-		<string>UHIGH</string>
+		<string>APPLE</string>
 		<key>Legacy</key>
 		<string>PBR</string>
+		<key>NeverHibernate</key>
+		<true/>
 		<key>NoEarlyProgress</key>
 		<true/>
 		<key>Secure</key>
@@ -308,6 +362,115 @@
 	</dict>
 	<key>Devices</key>
 	<dict>
+		<key>AddProperties</key>
+		<array>
+			<dict>
+				<key>Device</key>
+				<string>NVidia</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Key</key>
+				<string>@1, connector-type</string>
+				<key>Value</key>
+				<data>
+				AABAAAA=
+				</data>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>NVidia</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Key</key>
+				<string>@1, connector-type</string>
+				<key>Value</key>
+				<data>
+				AAQAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>IntelGFX</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Key</key>
+				<string>hda-gfx</string>
+				<key>Value</key>
+				<data>
+				b25ib2FyZC0xAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>HDA</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Key</key>
+				<string>hda-gfx</string>
+				<key>Value</key>
+				<data>
+				b25ib2FyZC0xAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>HDA</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Key</key>
+				<string>layout-id</string>
+				<key>Value</key>
+				<data>
+				CwAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>HDMI</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Key</key>
+				<string>hda-gfx</string>
+				<key>Value</key>
+				<data>
+				b25ib2FyZC0xAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>HDMI</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Key</key>
+				<string>layout-id</string>
+				<key>Value</key>
+				<data>
+				CwAAAA==
+				</data>
+			</dict>
+		</array>
+		<key>Arbitrary</key>
+		<array>
+			<dict>
+				<key>Comment</key>
+				<string>nv-edp</string>
+				<key>CustomProperties</key>
+				<array>
+					<dict>
+						<key>Disabled</key>
+						<true/>
+						<key>Key</key>
+						<string>@1, connector-type</string>
+						<key>Value</key>
+						<data>
+						AAQAAA==
+						</data>
+					</dict>
+				</array>
+				<key>PciAddr</key>
+				<string>1:0:0</string>
+			</dict>
+		</array>
 		<key>Audio</key>
 		<dict>
 			<key>ResetHDA</key>
@@ -319,9 +482,13 @@
 			<true/>
 			<key>FixOwnership</key>
 			<true/>
+			<key>HighCurrent</key>
+			<true/>
 			<key>Inject</key>
 			<true/>
 		</dict>
+		<key>UseIntelHDMI</key>
+		<true/>
 	</dict>
 	<key>DisableDrivers</key>
 	<array>
@@ -347,7 +514,7 @@
 					<key>Type</key>
 					<string>Linux</string>
 					<key>Volume</key>
-					<string>HD(1,GPT,EC608816-0C23-46DD-ADFC-F854D5378D21,0x800,0xFA000)</string>
+					<string>AADED3B1-A2D3-400C-825B-F26B5C30B2A7</string>
 					<key>VolumeType</key>
 					<string>Internal</string>
 				</dict>
@@ -357,6 +524,14 @@
 		<array>
 			<string>preboot</string>
 			<string>recovery</string>
+			<string>10134</string>
+			<string>ALIENDATA</string>
+			<string>MICROSD</string>
+			<string>USSD</string>
+			<string>SSDEFI</string>
+			<string>UHIGH</string>
+			<string>Mac</string>
+			<string>big</string>
 		</array>
 		<key>Language</key>
 		<string>zh_CN:0</string>
@@ -385,7 +560,7 @@
 		<key>ScreenResolution</key>
 		<string>1920x1080</string>
 		<key>Theme</key>
-		<string>0</string>
+		<string>random</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -403,13 +578,25 @@
 			<key>NVidia</key>
 			<true/>
 		</dict>
+		<key>LoadVBios</key>
+		<true/>
+		<key>NvidiaGeneric</key>
+		<true/>
+		<key>NvidiaNoEFI</key>
+		<true/>
+		<key>NvidiaSingle</key>
+		<true/>
+		<key>PatchVBios</key>
+		<true/>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
 		<key>AppleIntelCPUPM</key>
 		<false/>
-		<key>AppleRTC</key>
-		<true/>
+		<key>ForceKextsToLoad</key>
+		<array>
+			<string>\System\Library\Extensions\IONetworkingFamily.kext</string>
+		</array>
 		<key>KernelPm</key>
 		<false/>
 		<key>KextsToPatch</key>
@@ -418,11 +605,13 @@
 				<key>Comment</key>
 				<string>External icons patch</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				RXh0ZXJuYWw=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>AppleAHCIPort</string>
 				<key>Replace</key>
@@ -434,11 +623,13 @@
 				<key>Comment</key>
 				<string>0x591b0000, 32MB BIOS, 19MB framebuffer 9MB cursor bytes (credit RehabMan)</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				AABgAgAAUAE=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
 				<key>Replace</key>
@@ -456,11 +647,33 @@
 				AgQKAAAIAACHAQAAAwYKAAAEAACHAQAA/wAAAAEAAAAg
 				AAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
 				AQUKAAAIAACHAQAAAgQKAAAIAACHAQAA/wAAAAEAAAAg
+				AAAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>0x591b0000, 0105 instead of 0204, HDMI</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AgQKAAAIAACHAQAAAwYKAAAEAACHAQAA/wAAAAEAAAAg
+				AAAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AQUKAAAIAACHAQAAAwYKAAAEAACHAQAA/wAAAAEAAAAg
 				AAAA
 				</data>
 			</dict>
@@ -473,6 +686,8 @@
 				<data>
 				AQAAdSI=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>IOGraphicsFamily</string>
 				<key>Replace</key>
@@ -489,6 +704,8 @@
 				<data>
 				RiV1VCUwNHgA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleBacklight</string>
 				<key>Replace</key>
@@ -498,18 +715,180 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>change 15 port limit to 26 in AppleUSBXHCIPCI</string>
+				<string>change 15 port limit to 26</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
 				<data>
-				g72M/v//EA==
+				g32UDw+DlwQAAA==
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
-				<string>AppleUSBXHCIPCI</string>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
-				g72M/v//Gw==
+				g32UD5CQkJCQkA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>ex smbios hdmi</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				TWFjLTc3RjE3RDdEQTkyODUzMDE=
+				</data>
+				<key>InfoPlistPatch</key>
+				<true/>
+				<key>Name</key>
+				<string>AppleGraphicsDevicePolicy</string>
+				<key>Replace</key>
+				<data>
+				TWFjLTU1MUI4NkU1NzQ0RTIzODg=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>100_Series_ Audio_Controller</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				cKE=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>AppleHDAController</string>
+				<key>Replace</key>
+				<data>
+				caE=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>0-edp</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AAAIAAIAAACYAAAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AAAIAAAEAACYAAAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>1-hdmi</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AQUJAAAEAACHAQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AQUJAAAIAACHAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>n1</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				AAgAAA==
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>NVDAGP100HalWeb</string>
+				<key>Replace</key>
+				<data>
+				AAQAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>n2</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				AAgAAA==
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>NVDAResmanWeb</string>
+				<key>Replace</key>
+				<data>
+				AAQAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>n3</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				AAgAAA==
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>GeForceWeb</string>
+				<key>Replace</key>
+				<data>
+				AAQAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>1536MB -&gt; 2048MB for HD630 Mobile</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AQMDAwAAYAIAAFABAAAAYA==
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>AppleIntelKBLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AQMDAwAAYAIAAFABAAAAgA==
+				</data>
+			</dict>
+			<dict>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				3hALDg==
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleHDAController</string>
+				<key>Replace</key>
+				<data>
+				3hADGQ==
 				</data>
 			</dict>
 		</array>
@@ -524,17 +903,17 @@
 	<key>SMBIOS</key>
 	<dict>
 		<key>BiosReleaseDate</key>
-		<string>08/08/2017</string>
+		<string>12/14/2017</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>MBP143.88Z.0167.B00.1708080129</string>
+		<string>MBP143.88Z.0169.B00.1712141540</string>
 		<key>Board-ID</key>
 		<string>Mac-551B86E5744E2388</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02740270J9DKG1UE</string>
+		<string>C02736104GUFF4P8C</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -548,7 +927,7 @@
 		<key>Family</key>
 		<string>MacBook Pro</string>
 		<key>FirmwareFeatures</key>
-		<string>0xFC0FE13E</string>
+		<string>0xFC0FE13F</string>
 		<key>FirmwareFeaturesMask</key>
 		<string>0xFF1FFF3F</string>
 		<key>LocationInChassis</key>
@@ -562,7 +941,7 @@
 		<key>ProductName</key>
 		<string>MacBookPro14,3</string>
 		<key>SerialNumber</key>
-		<string>C02VH1I2HTD5</string>
+		<string>C02VC1FLHTD5</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>

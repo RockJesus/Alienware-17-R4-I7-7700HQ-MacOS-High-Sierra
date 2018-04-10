@@ -4,10 +4,12 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>AppleBacklight</string>
 	<key>CFBundleGetInfoString</key>
 	<string>0.9.0, Copyright 2013 RehabMan Inc. All rights reserved.</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.rehabman.injector.AppleBacklightInjector</string>
+	<string>org.rehabman.driver.AppleBacklightInjector</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -30,12 +32,16 @@
 		<dict>
 			<key>ApplePanels</key>
 			<dict>
-				<key>F14Txxxx</key>
-				<data>ABEAAAA0AFIAcwCUAL4A+gE2AXIBxQIvArkDYAQaBQoGDgcQ</data>
-				<key>F15Txxxx</key>
-				<data>ABEAAAA2AFQAfQCyAPUBSQGxAisCuANZBBME7AXzBzQIrwrZ</data>
-				<key>F16Txxxx</key>
-				<data>ABEAAAAYACcAOgBSAHEAlgDEAPwBQAGTAfYCbgL+A6oEeAVs</data>
+				<key>F10T02e2</key>
+				<data>
+				ABEAAACMANgBNgGPAf4CowNFA+cExwU1B1oJHAsTDZsQ
+				WRMS
+				</data>
+				<key>F10T050b</key>
+				<data>
+				ABEAAAAcACwAPwBRAGgAigCrAMwA+gE1AYEB3QJEAskD
+				WQPo
+				</data>
 			</dict>
 			<key>CFBundleIdentifier</key>
 			<string>com.apple.driver.AppleBacklight</string>
