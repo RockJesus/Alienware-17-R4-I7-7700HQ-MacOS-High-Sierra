@@ -65,7 +65,7 @@ CPU:Intel  i7-7700hq
 
 
 
-第二部分 （双显卡模式）
+第二部分 （双显卡模式&单独显模式）
 特别感谢@【解】小天
 
 
@@ -73,12 +73,12 @@ CPU:Intel  i7-7700hq
 
 
 此配置config兼容两种启动方式
-A：win10下fn+f7 以核显启动（个人推荐）
+A：win10下fn+f7 以核显启动-双显卡模式（个人推荐）
 原生驱动I7-7700HQ HD630 / webdriver 驱动nvidia 1060
 （外接hdmi显示器连接1060视频输出正常，hdmi声音不出声，内屏连接hd630输出正常，HDMI热拔插正常，thunderbolt未测试）
 
 
-B：win10下fn+f7 以独显启动
+B：win10下fn+f7 以独显启动-单独显模式
 HD630貌似被屏蔽 / webdriver 驱动nvidia 1060
 （外接hdmi显示器和内屏连接1060视频输出正常，有个问题插着hdmi启动会黑屏，不插hdmi启动正常，HDMI热拔插正常，hdmi声音不出声，thunderbolt/dp未测试）
 
