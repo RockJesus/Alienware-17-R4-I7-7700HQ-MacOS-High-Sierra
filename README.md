@@ -1,4 +1,4 @@
-# Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra 10.13.4 【Dual Graphics】
+# Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra 10.13.6 【Dual Graphics】
 
 http://bbs.pcbeta.com/viewthread-1761528-1-1.html
 
@@ -8,7 +8,7 @@ bios版本1.2.4
 CPU:Intel  i7-7700hq
 显卡:Intel HD630 /  Nvidia GeForce GT 1060
 内存:16g
-硬盘:Sandisk m.2 128G /希捷 1T （添加nvme sm961 256g）
+硬盘:Sandisk m.2 256G /希捷 1T （添加nvme sm961 256g）
 声卡：alc298
 网卡：killer e2500 (wifi 更换为dw1560-bcm94352z )
 
