@@ -72,8 +72,8 @@
 				<string>Realtek ALC283,etc</string>
 				<key>10ec_0283</key>
 				<string>Realtek ALC283,etc</string>
-				<key>10ec_0292</key>
-				<string>Realtek ALC292</string>
+				<key>10ec_0298</key>
+				<string>Realtek ALC298</string>
 				<key>10ec_0668</key>
 				<string>Realtek ALC668</string>
 				<key>10ec_0892_HDA_1458</key>
@@ -110,7 +110,7 @@
 					<key>Check Infinitely</key>
 					<false/>
 					<key>Disable</key>
-					<true/>
+					<false/>
 					<key>Sleep Nodes</key>
 					<false/>
 					<key>Update Nodes</key>
@@ -260,7 +260,7 @@
 					<key>Sleep Nodes</key>
 					<false/>
 				</dict>
-				<key>Realtek ALC292</key>
+				<key>Realtek ALC298</key>
 				<dict>
 					<key>Custom Commands</key>
 					<array>
@@ -362,7 +362,7 @@
 				<key>Disabled HDMI</key>
 				<dict>
 					<key>Disable</key>
-					<true/>
+					<false/>
 				</dict>
 			</dict>
 			<key>IOClass</key>
@@ -434,7 +434,7 @@
 					<key>Check Infinitely</key>
 					<false/>
 					<key>Disable</key>
-					<true/>
+					<false/>
 					<key>Sleep Nodes</key>
 					<false/>
 					<key>Update Nodes</key>
