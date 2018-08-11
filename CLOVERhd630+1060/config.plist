@@ -27,6 +27,20 @@
 			<array>
 				<dict>
 					<key>Comment</key>
+					<string>change GFX0 to IGPU</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					R0ZYMA==
+					</data>
+					<key>Replace</key>
+					<data>
+					SUdQVQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
 					<string>change HDAS to HDEF</string>
 					<key>Disabled</key>
 					<false/>
@@ -69,23 +83,9 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change GFX0 to IGPU</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					R0ZYMA==
-					</data>
-					<key>Replace</key>
-					<data>
-					SUdQVQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>ALSD ALS0</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					QUxTRA==
@@ -107,20 +107,6 @@
 					<key>Replace</key>
 					<data>
 					VVBSVw==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change H_EC to EC</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					SF9FQw==
-					</data>
-					<key>Replace</key>
-					<data>
-					RUNfXw==
 					</data>
 				</dict>
 				<dict>
@@ -163,20 +149,6 @@
 					<key>Replace</key>
 					<data>
 					SERBVQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change LPC to LPCB</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					TFBDXw==
-					</data>
-					<key>Replace</key>
-					<data>
-					TFBDQg==
 					</data>
 				</dict>
 				<dict>
@@ -279,16 +251,16 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>pegp gfx0</string>
+					<string>PPMC PMCR</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
-					UEVHUA==
+					UFBNQw==
 					</data>
 					<key>Replace</key>
 					<data>
-					R0ZYMA==
+					UE1DUg==
 					</data>
 				</dict>
 			</array>
@@ -323,11 +295,32 @@
 				<key>Signature</key>
 				<string>MCFG</string>
 			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>sensrhub</string>
+			</dict>
 		</array>
 		<key>FixHeaders</key>
 		<true/>
 		<key>FixMCFG</key>
 		<true/>
+		<key>RenameDevices</key>
+		<dict>
+			<key>_SB.PCI0.PEG0.PEGP</key>
+			<string>GFX0</string>
+			<key>_SB.PCI0.PEG2.PEGP</key>
+			<string>TBLT</string>
+			<key>_SB.PCI0.RP01.PXSX</key>
+			<string>HSSD</string>
+			<key>_SB.PCI0.RP05.PXSX</key>
+			<string>ENET</string>
+			<key>_SB.PCI0.RP06.PXSX</key>
+			<string>ARPT</string>
+			<key>_SB.PCI0.RP17.PXSX</key>
+			<string>NVME</string>
+		</dict>
 		<key>ResetAddress</key>
 		<string>0xCF9</string>
 		<key>ResetValue</key>
@@ -352,7 +345,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>-disablegfxfirmware abm_firstpolldelay=16000 nvda_drv=1</string>
+		<string> ngfxcompat=1 nvda_drv=1 -disablegfxfirmware abm_firstpolldelay=16000</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
@@ -360,7 +353,7 @@
 		<key>Legacy</key>
 		<string>PBR</string>
 		<key>NeverHibernate</key>
-		<false/>
+		<true/>
 		<key>NoEarlyProgress</key>
 		<true/>
 		<key>Secure</key>
@@ -541,11 +534,11 @@
 		</array>
 		<key>Audio</key>
 		<dict>
-			<key>Inject</key>
-			<integer>11</integer>
 			<key>ResetHDA</key>
-			<true/>
+			<false/>
 		</dict>
+		<key>HDMIInjection</key>
+		<false/>
 		<key>USB</key>
 		<dict>
 			<key>AddClockID</key>
@@ -584,7 +577,7 @@
 					<key>Type</key>
 					<string>Linux</string>
 					<key>Volume</key>
-					<string>AADED3B1-A2D3-400C-825B-F26B5C30B2A7</string>
+					<string>HD(1,GPT,05B14329-D426-457A-88BD-D0442C58852A,0x1000,0x5DC000)</string>
 					<key>VolumeType</key>
 					<string>Internal</string>
 				</dict>
@@ -609,8 +602,6 @@
 		<dict>
 			<key>DoubleClick</key>
 			<integer>500</integer>
-			<key>Enabled</key>
-			<false/>
 			<key>Mirror</key>
 			<false/>
 			<key>Speed</key>
@@ -634,8 +625,6 @@
 	</dict>
 	<key>Graphics</key>
 	<dict>
-		<key>DualLink</key>
-		<integer>1</integer>
 		<key>EDID</key>
 		<dict>
 			<key>Inject</key>
@@ -718,8 +707,8 @@
 				<true/>
 				<key>Find</key>
 				<data>
-				AgQKAAAIAACHAQAAAwYKAAAEAACHAQAA/wAAAAEAAAAg
-				AAAA
+				AAAIAAIAAACYAAAAAQUJAAAEAACHAQAAAgQKAAAEAACH
+				AQAA
 				</data>
 				<key>InfoPlistPatch</key>
 				<false/>
@@ -727,8 +716,8 @@
 				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
-				AQUKAAAIAACHAQAAAgQKAAAIAACHAQAA/wAAAAEAAAAg
-				AAAA
+				AAAIAAIAAACYAAAAAQUSAAAIAACHAQAAAgQKAAAEAACH
+				AQAA
 				</data>
 			</dict>
 			<dict>
@@ -884,7 +873,7 @@
 				<true/>
 				<key>Find</key>
 				<data>
-				AQUJAAAIAACHAQAA
+				AgQKAAAIAACHAQAA
 				</data>
 				<key>InfoPlistPatch</key>
 				<false/>
@@ -892,7 +881,25 @@
 				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
-				AQUJAAAEAACHAQAA
+				AgQKAAAEAACHAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>2-hdmi</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				AwYKAAAEAACHAQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AwYKAAAIAACHAQAA
 				</data>
 			</dict>
 			<dict>
@@ -1003,12 +1010,12 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>db2</string>
+				<string>10.12.6-KBL-5912000-Port_0x5-DP2HDM</string>
 				<key>Disabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>
-				dkZI/wUCUgg=
+				AQUJAAAEAACHAQAA
 				</data>
 				<key>InfoPlistPatch</key>
 				<false/>
@@ -1016,18 +1023,17 @@
 				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
-				60ZI/wUCUgg=
+				AQUJAAAIAACHAQAA
 				</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>0x591b0000, eliminate all external ports (0204 and 0306)</string>
+				<string>10.12.6-KBL-5912000-Port_0x6-DP2HDM</string>
 				<key>Disabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>
-				AgQKAAAIAACHAQAAAwYKAAAEAACHAQAA/wAAAAEAAAAg
-				AAAA
+				AgQKAAAEAACHAQAA
 				</data>
 				<key>InfoPlistPatch</key>
 				<false/>
@@ -1035,8 +1041,61 @@
 				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
-				/wAAAAEAAAAgAAAA/wAAAAEAAAAgAAAA/wAAAAEAAAAg
-				AAAA
+				AgQKAAAIAACHAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.12.6-KBL-5912000-Port_0x7-DP2HDM</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AwYKAAAEAACHAQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AwYKAAAIAACHAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				SU9LaXQ=
+				</data>
+				<key>InfoPlistPatch</key>
+				<true/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelLpssI2C</string>
+				<key>Replace</key>
+				<data>
+				SU9LaXM=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				SU9LaXQ=
+				</data>
+				<key>InfoPlistPatch</key>
+				<true/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelLpssI2CController</string>
+				<key>Replace</key>
+				<data>
+				SU9LaXM=
 				</data>
 			</dict>
 		</array>
@@ -1047,25 +1106,21 @@
 		<string>0x28</string>
 		<key>CsrActiveConfig</key>
 		<string>0x67</string>
-		<key>ROM</key>
-		<data>
-		0dgFw3ZZ
-		</data>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
 		<key>BiosReleaseDate</key>
-		<string>02/08/2018</string>
+		<string>06/26/2018</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>MBP143.88Z.0173.B00.1802080917</string>
+		<string>MBP143.88Z.0178.B00.1806261159</string>
 		<key>Board-ID</key>
 		<string>Mac-551B86E5744E2388</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02746600OPF502JC</string>
+		<string>C02740108CDDM651M</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -1093,18 +1148,14 @@
 		<key>ProductName</key>
 		<string>MacBookPro14,3</string>
 		<key>SerialNumber</key>
-		<string>C02VQ2BJHTD5</string>
+		<string>C02VH4VGHTD5</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
-		<key>CustomUUID</key>
-		<string>10292EE1-2192-49A1-88E4-5F9419C37659</string>
 		<key>InjectKexts</key>
 		<string>Yes</string>
-		<key>InjectSystemID</key>
-		<true/>
 		<key>NvidiaWeb</key>
 		<true/>
 	</dict>

@@ -14,6 +14,8 @@
 			<false/>
 			<key>Fixes</key>
 			<dict>
+				<key>FakeLPC</key>
+				<false/>
 				<key>FixShutdown</key>
 				<true/>
 				<key>FixUSB</key>
@@ -321,6 +323,18 @@
 				<key>Signature</key>
 				<string>MCFG</string>
 			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>sensrhub</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>SaSsdt </string>
+			</dict>
 		</array>
 		<key>FixHeaders</key>
 		<true/>
@@ -350,7 +364,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>-disablegfxfirmware abm_firstpolldelay=16000 nvda_drv=1</string>
+		<string>ngfxcompat=1 nvda_drv=1 -disablegfxfirmware abm_firstpolldelay=16000</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
@@ -358,7 +372,7 @@
 		<key>Legacy</key>
 		<string>PBR</string>
 		<key>NeverHibernate</key>
-		<false/>
+		<true/>
 		<key>NoEarlyProgress</key>
 		<true/>
 		<key>Secure</key>
@@ -385,9 +399,7 @@
 				<key>Key</key>
 				<string>hda-gfx</string>
 				<key>Value</key>
-				<data>
-				b25ib2FyZC0x
-				</data>
+				<string>onboard-1</string>
 			</dict>
 			<dict>
 				<key>Device</key>
@@ -397,9 +409,7 @@
 				<key>Key</key>
 				<string>hda-gfx</string>
 				<key>Value</key>
-				<data>
-				b25ib2FyZC0x
-				</data>
+				<string>onboard-1</string>
 			</dict>
 			<dict>
 				<key>Device</key>
@@ -409,9 +419,7 @@
 				<key>Key</key>
 				<string>layout-id</string>
 				<key>Value</key>
-				<data>
-				CwAAAA==
-				</data>
+				<string>0B000000</string>
 			</dict>
 			<dict>
 				<key>Device</key>
@@ -421,9 +429,7 @@
 				<key>Key</key>
 				<string>hda-gfx</string>
 				<key>Value</key>
-				<data>
-				b25ib2FyZC0y
-				</data>
+				<string>onboard-1</string>
 			</dict>
 			<dict>
 				<key>Device</key>
@@ -435,6 +441,18 @@
 				<key>Value</key>
 				<data>
 				AQAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>NVidia</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Key</key>
+				<string>@1, connector-type</string>
+				<key>Value</key>
+				<data>
+				AAQAAA==
 				</data>
 			</dict>
 		</array>
@@ -451,13 +469,11 @@
 						<key>Key</key>
 						<string>@1, connector-type</string>
 						<key>Value</key>
-						<data>
-						AAQAAA==
-						</data>
+						<string>00040000</string>
 					</dict>
 				</array>
 				<key>PciAddr</key>
-				<string>1:0:0</string>
+				<string>01:00:00</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -466,7 +482,7 @@
 				<array>
 					<dict>
 						<key>Disabled</key>
-						<false/>
+						<true/>
 						<key>Key</key>
 						<string>hda-gfx</string>
 						<key>Value</key>
@@ -474,7 +490,32 @@
 					</dict>
 					<dict>
 						<key>Disabled</key>
-						<false/>
+						<true/>
+						<key>Key</key>
+						<string>layout-id</string>
+						<key>Value</key>
+						<integer>1</integer>
+					</dict>
+				</array>
+				<key>PciAddr</key>
+				<string>00:14.02</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>intel-audio</string>
+				<key>CustomProperties</key>
+				<array>
+					<dict>
+						<key>Disabled</key>
+						<true/>
+						<key>Key</key>
+						<string>hda-gfx</string>
+						<key>Value</key>
+						<string>onboard-1</string>
+					</dict>
+					<dict>
+						<key>Disabled</key>
+						<true/>
 						<key>Key</key>
 						<string>layout-id</string>
 						<key>Value</key>
@@ -482,14 +523,43 @@
 					</dict>
 				</array>
 				<key>PciAddr</key>
-				<string>00:14.02</string>
+				<string>00:04.00</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>hdef</string>
+				<key>CustomProperties</key>
+				<array>
+					<dict>
+						<key>Disabled</key>
+						<true/>
+						<key>Key</key>
+						<string>layout-id</string>
+						<key>Value</key>
+						<integer>11</integer>
+					</dict>
+					<dict>
+						<key>Disabled</key>
+						<true/>
+						<key>Key</key>
+						<string>hda-gfx</string>
+						<key>Value</key>
+						<string>onboard-1</string>
+					</dict>
+				</array>
+				<key>PciAddr</key>
+				<string>00:1F.03</string>
 			</dict>
 		</array>
 		<key>Audio</key>
 		<dict>
+			<key>Inject</key>
+			<integer>1</integer>
 			<key>ResetHDA</key>
-			<true/>
+			<false/>
 		</dict>
+		<key>HDMIInjection</key>
+		<false/>
 		<key>USB</key>
 		<dict>
 			<key>AddClockID</key>
@@ -497,7 +567,7 @@
 			<key>FixOwnership</key>
 			<true/>
 			<key>HighCurrent</key>
-			<false/>
+			<true/>
 			<key>Inject</key>
 			<true/>
 		</dict>
@@ -528,7 +598,7 @@
 					<key>Type</key>
 					<string>Linux</string>
 					<key>Volume</key>
-					<string>AADED3B1-A2D3-400C-825B-F26B5C30B2A7</string>
+					<string>HD(1,GPT,05B14329-D426-457A-88BD-D0442C58852A,0x1000,0x5DC000)</string>
 					<key>VolumeType</key>
 					<string>Internal</string>
 				</dict>
@@ -553,8 +623,6 @@
 		<dict>
 			<key>DoubleClick</key>
 			<integer>500</integer>
-			<key>Enabled</key>
-			<false/>
 			<key>Mirror</key>
 			<false/>
 			<key>Speed</key>
@@ -658,8 +726,8 @@
 				<true/>
 				<key>Find</key>
 				<data>
-				AgQKAAAIAACHAQAAAwYKAAAEAACHAQAA/wAAAAEAAAAg
-				AAAA
+				AAAIAAIAAACYAAAAAQUJAAAEAACHAQAAAgQKAAAEAACH
+				AQAA
 				</data>
 				<key>InfoPlistPatch</key>
 				<false/>
@@ -667,8 +735,8 @@
 				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
-				AQUKAAAIAACHAQAAAgQKAAAIAACHAQAA/wAAAAEAAAAg
-				AAAA
+				AAAIAAIAAACYAAAAAQUSAAAIAACHAQAAAgQKAAAEAACH
+				AQAA
 				</data>
 			</dict>
 			<dict>
@@ -819,12 +887,12 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>1-hdmi</string>
+				<string>1-edp</string>
 				<key>Disabled</key>
 				<true/>
 				<key>Find</key>
 				<data>
-				AQUJAAAEAACHAQAA
+				AgQKAAAIAACHAQAA
 				</data>
 				<key>InfoPlistPatch</key>
 				<false/>
@@ -832,7 +900,25 @@
 				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
-				AQUJAAAIAACHAQAA
+				AgQKAAAEAACHAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>2-hdmi</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				AwYKAAAEAACHAQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AwYKAAAIAACHAQAA
 				</data>
 			</dict>
 			<dict>
@@ -943,12 +1029,12 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>db2</string>
+				<string>10.12.6-KBL-5912000-Port_0x5-DP2HDM</string>
 				<key>Disabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>
-				dkZI/wUCUgg=
+				AQUJAAAEAACHAQAA
 				</data>
 				<key>InfoPlistPatch</key>
 				<false/>
@@ -956,7 +1042,43 @@
 				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
-				60ZI/wUCUgg=
+				AQUJAAAIAACHAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.12.6-KBL-5912000-Port_0x6-DP2HDM</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AgQKAAAEAACHAQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AgQKAAAIAACHAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.12.6-KBL-5912000-Port_0x7-DP2HDM</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AwYKAAAEAACHAQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AwYKAAAIAACHAQAA
 				</data>
 			</dict>
 		</array>
@@ -967,25 +1089,21 @@
 		<string>0x28</string>
 		<key>CsrActiveConfig</key>
 		<string>0x67</string>
-		<key>ROM</key>
-		<data>
-		0dgFw3ZZ
-		</data>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
 		<key>BiosReleaseDate</key>
-		<string>02/08/2018</string>
+		<string>06/26/2018</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>MBP143.88Z.0173.B00.1802080917</string>
+		<string>MBP143.88Z.0178.B00.1806261159</string>
 		<key>Board-ID</key>
 		<string>Mac-551B86E5744E2388</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02746600OPF502JC</string>
+		<string>C02740108CDDM651M</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -1013,18 +1131,14 @@
 		<key>ProductName</key>
 		<string>MacBookPro14,3</string>
 		<key>SerialNumber</key>
-		<string>C02VQ2BJHTD5</string>
+		<string>C02VH4VGHTD5</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
-		<key>CustomUUID</key>
-		<string>10292EE1-2192-49A1-88E4-5F9419C37659</string>
 		<key>InjectKexts</key>
 		<string>Yes</string>
-		<key>InjectSystemID</key>
-		<true/>
 		<key>NvidiaWeb</key>
 		<true/>
 	</dict>

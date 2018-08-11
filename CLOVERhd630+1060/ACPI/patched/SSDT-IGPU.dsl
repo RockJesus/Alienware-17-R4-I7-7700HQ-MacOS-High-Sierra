@@ -1,14 +1,15 @@
 // Automatic injection of IGPU properties
 
-DefinitionBlock("", "SSDT", 2, "hack", "IGPU", 0)
+#ifndef NO_DEFINITIONBLOCK
+DefinitionBlock("", "SSDT", 2, "hack", "_IGPU", 0)
 {
-    External(_SB.PCI0.IGPU, DeviceObj)
-
+#endif
     External(RMCF.TYPE, IntObj)
     External(RMCF.HIGH, IntObj)
     External(RMCF.IGPI, IntObj)
     External(RMGO, PkgObj)
 
+    External(_SB.PCI0.IGPU, DeviceObj)
     Scope(_SB.PCI0.IGPU)
     {
         // need the device-id from PCI_config to inject correct properties
@@ -229,13 +230,19 @@ DefinitionBlock("", "SSDT", 2, "hack", "IGPU", 0)
                 "model", Buffer() { "Intel HD Graphics 5600" },
                 "hda-gfx", Buffer() { "onboard-1" },
             },
-            // Broadwell/HD6000/HD6100/HD6200
-            0x1626, 0x162b, 0x1622, 0, Package()
+            // Broadwell/HD6000/HD6100
+            0x1626, 0x162b, 0, Package()
             {
                 "AAPL,ig-platform-id", Buffer() { 0x02, 0x00, 0x16, 0x16 },
                 "hda-gfx", Buffer() { "onboard-1" },
             },
-            // Skylake/HD510
+            // Broadwell Iris Pro Graphics 6200
+            0x1622, 0, Package()
+            {
+                "AAPL,ig-platform-id", Buffer() { 0x02, 0x00, 0x22, 0x16 },
+                "model", Buffer() { "Intel Iris Pro Graphics 6200" },
+                "hda-gfx", Buffer() { "onboard-1" },
+            },            // Skylake/HD510
             0x1902, 0x1906, 0, Package()
             {
                 "AAPL,ig-platform-id", Buffer() { 0x00, 0x00, 0x1e, 0x19 },
@@ -438,5 +445,7 @@ DefinitionBlock("", "SSDT", 2, "hack", "IGPU", 0)
             Return (Local0)
         }
     }
+#ifndef NO_DEFINITIONBLOCK
 }
+#endif
 //EOF

@@ -1,7 +1,9 @@
 // Adding SMBUS device
 
-DefinitionBlock("", "SSDT", 2, "hack", "SMBUS", 0)
+#ifndef NO_DEFINITIONBLOCK
+DefinitionBlock("", "SSDT", 2, "hack", "_SMBUS", 0)
 {
+#endif
     Device(_SB.PCI0.SBUS.BUS0)
     {
         Name(_CID, "smbus")
@@ -17,5 +19,7 @@ DefinitionBlock("", "SSDT", 2, "hack", "SMBUS", 0)
             }
         }
     }
+#ifndef NO_DEFINITIONBLOCK
 }
+#endif
 //EOF

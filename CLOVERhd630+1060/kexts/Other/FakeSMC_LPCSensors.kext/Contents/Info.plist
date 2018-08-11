@@ -52,9 +52,6 @@
 			<string>LPCSensors</string>
 			<key>IONameMatch</key>
 			<array>
-				<string>Fintek,F71858</string>
-				<string>Fintek,F71862</string>
-				<string>Fintek,F71868A</string>
 				<string>Fintek,F71869</string>
 				<string>Fintek,F71869A</string>
 				<string>Fintek,F71882</string>
@@ -843,7 +840,6 @@
 			<string>LPCSensors</string>
 			<key>IONameMatch</key>
 			<array>
-				<string>ITE,IT8628E</string>
 				<string>ITE,IT8512F</string>
 				<string>ITE,IT8505F</string>
 				<string>ITE,IT8712F</string>
@@ -2993,7 +2989,6 @@
 			<string>LPCSensors</string>
 			<key>IONameMatch</key>
 			<array>
-				<string>Nuvoton,NCT6771F</string>
 				<string>Nuvoton,NCT6776F</string>
 				<string>Nuvoton,NCT6779D</string>
 				<string>Nuvoton,NCT6791D</string>
@@ -4430,7 +4425,7 @@
 			<string>LPCSensors</string>
 			<key>IONameMatch</key>
 			<array>
-				<string>Winbond,W83627DHG</string>
+				<string>pci8086,a121</string>
 				<string>Winbond,W83627UHG</string>
 				<string>Winbond,W83627DHGP</string>
 				<string>Winbond,W83627EHF</string>
@@ -5172,6 +5167,6 @@
 		<string>1429</string>
 	</dict>
 	<key>Source Code</key>
-	<string>"https://github.com/RehabMan/OS-X-FakeSMC-kozlek.git"</string>
+	<string>&quot;https://github.com/RehabMan/OS-X-FakeSMC-kozlek.git&quot;</string>
 </dict>
 </plist>
