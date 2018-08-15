@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of iASLUS0Apy.aml, Mon Aug 13 20:52:09 2018
+ * Disassembly of iASLtmKdrK.aml, Tue Aug 14 18:04:00 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00001980 (6528)
+ *     Length           0x000019E4 (6628)
  *     Revision         0x02
- *     Checksum         0xB9
+ *     Checksum         0x29
  *     OEM ID           "hack"
  *     OEM Table ID     "AW17-RJ"
  *     OEM Revision     0x00000000 (0)
@@ -76,6 +76,34 @@ DefinitionBlock ("", "SSDT", 2, "hack", "AW17-RJ", 0x00000000)
         Device (DPCH)
         {
             Name (_ADR, 0x00140002)  // _ADR: Address
+        }
+    }
+
+    Device (_SB.EC)
+    {
+        Name (_HID, "EC000000")  // _HID: Hardware ID
+    }
+
+    Device (_SB.USBX)
+    {
+        Name (_ADR, Zero)  // _ADR: Address
+        Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+        {
+            If (LNot (Arg2))
+            {
+                Return (Buffer (One)
+                {
+                     0x03                                           
+                })
+            }
+
+            Return (Package (0x04)
+            {
+                "kUSBSleepPortCurrentLimit", 
+                0x0BB8, 
+                "kUSBWakePortCurrentLimit", 
+                0x0BB8
+            })
         }
     }
 
@@ -980,7 +1008,7 @@ DefinitionBlock ("", "SSDT", 2, "hack", "AW17-RJ", 0x00000000)
             "hda-gfx", 
             Buffer (0x0A)
             {
-                "onboard-2"
+                "onboard-1"
             }
         })
     }
@@ -1050,13 +1078,13 @@ DefinitionBlock ("", "SSDT", 2, "hack", "AW17-RJ", 0x00000000)
             "layout-id", 
             Buffer (0x04)
             {
-                 0x0B, 0x00, 0x00, 0x00                         
+                 0x01, 0x00, 0x00, 0x00                         
             }, 
 
             "hda-gfx", 
             Buffer (0x0A)
             {
-                "onboard-1"
+                "onboard-2"
             }
         })
     }
@@ -1231,10 +1259,8 @@ DefinitionBlock ("", "SSDT", 2, "hack", "AW17-RJ", 0x00000000)
             })
         }
 
-        Return (Package (0x08)
+        Return (Package (0x06)
         {
-            "compatible", 
-            "pci14e4,43a0", 
             "device_type", 
             Buffer (0x13)
             {

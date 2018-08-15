@@ -239,7 +239,7 @@
 					<key>Comment</key>
 					<string>ec0 ec</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					RUMwXw==
@@ -261,6 +261,20 @@
 					<key>Replace</key>
 					<data>
 					UE1DUg==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>H_ec ec</string>
+					<key>Disabled</key>
+					<true/>
+					<key>Find</key>
+					<data>
+					SF9FQw==
+					</data>
+					<key>Replace</key>
+					<data>
+					RUNfXw==
 					</data>
 				</dict>
 			</array>
@@ -345,7 +359,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>ngfxcompat=1 nvda_drv=1 kext-dev-mode=1 -disablegfxfirmware abm_firstpolldelay=16000</string>
+		<string>abm_firstpolldelay=16000 slide=470 nvda_drv=1 kext-dev-mode=1 -disablegfxfirmware ngfxcompat=1</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
@@ -534,6 +548,8 @@
 		</array>
 		<key>Audio</key>
 		<dict>
+			<key>AFGLowPowerState</key>
+			<false/>
 			<key>ResetHDA</key>
 			<false/>
 		</dict>
@@ -546,8 +562,6 @@
 			<key>FixOwnership</key>
 			<false/>
 			<key>HighCurrent</key>
-			<false/>
-			<key>Inject</key>
 			<false/>
 		</dict>
 		<key>UseIntelHDMI</key>
@@ -649,8 +663,6 @@
 		<false/>
 		<key>PatchVBios</key>
 		<false/>
-		<key>ig-platform-id</key>
-		<string>0x591b0000</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -658,13 +670,19 @@
 		<false/>
 		<key>AppleRTC</key>
 		<false/>
+		<key>DellSMBIOSPatch</key>
+		<false/>
 		<key>ForceKextsToLoad</key>
 		<array>
 			<string>\System\Library\Extensions\IONetworkingFamily.kext</string>
 		</array>
+		<key>KernelCpu</key>
+		<false/>
 		<key>KernelLapic</key>
 		<false/>
 		<key>KernelPm</key>
+		<false/>
+		<key>KernelXCPM</key>
 		<false/>
 		<key>KextsToPatch</key>
 		<array>
@@ -962,7 +980,7 @@
 				<key>Comment</key>
 				<string>BCM4352-Airport-Extreme, (credit skvo)</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				axAAAHUN
@@ -980,7 +998,7 @@
 				<key>Comment</key>
 				<string>Country Code Patch CN(#a) - Credit PMheart</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				QYP8/3Q1SI1V0A==
