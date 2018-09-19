@@ -13,6 +13,9 @@ CPU:Intel  i7-7700hq
 网卡：killer e2500 (wifi 更换为dw1560-bcm94352z )
 
 成功驱动「HD630+nvidia 1060双显卡」声卡网卡，满足日常使用（双显卡模式请看第二部分）
+![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/about.png)
+![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/des.png)
+![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/pci.png)
 
 ------------------------------------------------------------------------------------------------------------------------------
 第一部分（核显模式）
@@ -152,7 +155,12 @@ PS：
 
 Q1：cpu必须使用这个VoodooTSCSync.kext才能正常使用，否则进入系统响应超慢，请问这个问题有解吗？
 Q2: hdmi声音至今未搞定
-
+Q3: 未驱动硬件
+![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/drv.png)
 
 问题多多不够完美，要完善的地方还有很多，慢慢更新吧
 寻找机油一起研究 QQ群: 308469644
+
+*************** BUY ME A COFFEE *********************************************************
+![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/wx.jpeg)
+![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/zfb.jpeg)
