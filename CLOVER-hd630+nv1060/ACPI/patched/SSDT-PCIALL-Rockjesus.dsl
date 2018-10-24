@@ -1,137 +1,168 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
+ * AML/ASL+ Disassembler version 20180810 (64-bit version)
  * Copyright (c) 2000 - 2018 Intel Corporation
  * 
- * Disassembling to non-symbolic legacy ASL operators
+ * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLK99MPh.aml, Sun Aug 12 15:05:05 2018
+ * Disassembly of iASLBmKcj5.aml, Fri Oct 12 18:11:32 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x000008C4 (2244)
+ *     Length           0x00000A81 (2689)
  *     Revision         0x02
- *     Checksum         0x36
+ *     Checksum         0xCD
  *     OEM ID           "hack"
- *     OEM Table ID     "PCI-RJ"
+ *     OEM Table ID     "AW17-RJ"
  *     OEM Revision     0x00000000 (0)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20180427 (538444839)
+ *     Compiler Version 0x20180810 (538445840)
  */
-DefinitionBlock ("", "SSDT", 2, "hack", "PCI-RJ", 0x00000000)
+DefinitionBlock ("", "SSDT", 2, "hack", "AW17-RJ", 0x00000000)
 {
-    External (_SB_.PCI0.DPCH, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.HDAU, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.HDEF, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.IGPU, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.IMEI, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.LPCB, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.MCHC, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.PEG0.GFX0, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.PMCR, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.RP01.PXSX, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.RP05.ENET, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.RP06.ARPT, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.RP09.NVME, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.SATA, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.SBUS, DeviceObj)    // (from opcode)
-    External (_SB_.PCI0.XHC_, DeviceObj)    // (from opcode)
+    External (_PR_.CPU0, DeviceObj)
+    External (_SB_.PCI0, DeviceObj)
+    External (_SB_.PCI0.DPCH, DeviceObj)
+    External (_SB_.PCI0.HDAU, DeviceObj)
+    External (_SB_.PCI0.HDEF, DeviceObj)
+    External (_SB_.PCI0.I2C0.DFUD, DeviceObj)
+    External (_SB_.PCI0.IGPU, DeviceObj)
+    External (_SB_.PCI0.IMEI, DeviceObj)
+    External (_SB_.PCI0.LPCB, DeviceObj)
+    External (_SB_.PCI0.MCHC, DeviceObj)
+    External (_SB_.PCI0.PEG0.GFX0, DeviceObj)
+    External (_SB_.PCI0.PEG1.EGPU, DeviceObj)
+    External (_SB_.PCI0.PEG2.TBLT, DeviceObj)
+    External (_SB_.PCI0.PMCR, DeviceObj)
+    External (_SB_.PCI0.RP01.PXSX, DeviceObj)
+    External (_SB_.PCI0.RP05.ENET, DeviceObj)
+    External (_SB_.PCI0.RP06.ARPT, DeviceObj)
+    External (_SB_.PCI0.RP09.NVME, DeviceObj)
+    External (_SB_.PCI0.SATA, DeviceObj)
+    External (_SB_.PCI0.SBUS, DeviceObj)
+    External (_SB_.PCI0.XHC_, DeviceObj)
+    External (_SB_.PCI0.XHC_.RHUB, DeviceObj)
+    External (_SB_.PCI0.XHC_.RHUB.HS01, DeviceObj)
+    External (_SB_.PCI0.XHC_.RHUB.HS02, DeviceObj)
+    External (_SB_.PCI0.XHC_.RHUB.HS04, DeviceObj)
+    External (_SB_.PCI0.XHC_.RHUB.HS05, DeviceObj)
+    External (_SB_.PCI0.XHC_.RHUB.HS07, DeviceObj)
+    External (_SB_.PCI0.XHC_.RHUB.HS08, DeviceObj)
+    External (_SB_.PCI0.XHC_.RHUB.SS01, DeviceObj)
+    External (_SB_.PCI0.XHC_.RHUB.SS02, DeviceObj)
+    External (_SB_.PCI0.XHC_.RHUB.SS04, DeviceObj)
+    External (_SB_.PCI0.XHC_.RHUB.USR1, DeviceObj)
+    External (_SB_.PCI0.XHC_.RHUB.USR2, DeviceObj)
+    External (GPBS, UnknownObj)
+    External (RMCF.BKLT, IntObj)
+    External (RMCF.FBTP, IntObj)
+    External (RMCF.GRAN, IntObj)
+    External (RMCF.LEVW, IntObj)
+    External (RMCF.LMAX, IntObj)
+    External (SDS0, UnknownObj)
+    External (SHAP, UnknownObj)
+    External (SPTH, UnknownObj)
+    External (USBH, UnknownObj)
 
-    Method (_SB.PCI0.DPCH._DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+    Scope (_SB.PCI0.PEG2.TBLT)
     {
-        If (LEqual (Arg2, Zero))
+        Device (TBL0)
         {
-            Return (Buffer (One)
+            Name (_ADR, Zero)  // _ADR: Address
+            Device (NHI0)
             {
-                 0x03                                           
-            })
+                Name (_ADR, Zero)  // _ADR: Address
+                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                {
+                    If ((Arg2 == Zero))
+                    {
+                        Return (Buffer (One)
+                        {
+                             0x03                                             // .
+                        })
+                    }
+
+                    Return (Package (0x06)
+                    {
+                        "AAPL,slot-name", 
+                        Buffer (0x0E)
+                        {
+                            "PCI-Express@1"
+                        }, 
+
+                        "device_type", 
+                        Buffer (0x15)
+                        {
+                            "Thunderbolt Ethernet"
+                        }, 
+
+                        "model", 
+                        Buffer (0x29)
+                        {
+                            "Thunderbolt 3 JHL6340 Ethernet controller"
+                        }
+                    })
+                }
+            }
         }
 
-        Return (Package (0x0A)
+        Device (TBL1)
         {
-            "AAPL,slot-name", 
-            Buffer (0x0C)
+            Name (_ADR, 0x00010000)  // _ADR: Address
+            Device (TBDP)
             {
-                "PCI-Express"
-            }, 
-
-            "device_type", 
-            Buffer (0x16)
-            {
-                "Nvidia HDMI controler"
-            }, 
-
-            "model", 
-            Buffer (0x3E)
-            {
-                "Intel Corporation 100 Series Chipset Family Thermal Subsystem"
-            }, 
-
-            "layout-id", 
-            Buffer (0x04)
-            {
-                 0x0B, 0x00, 0x00, 0x00                         
-            }, 
-
-            "hda-gfx", 
-            Buffer (0x0A)
-            {
-                "onboard-2"
+                Name (_ADR, Zero)  // _ADR: Address
             }
-        })
-    }
-
-    Method (_SB.PCI0.HDAU._DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-    {
-        If (LEqual (Arg2, Zero))
-        {
-            Return (Buffer (One)
-            {
-                 0x03                                           
-            })
         }
 
-        Return (Package (0x0A)
+        Device (TBL2)
         {
-            "AAPL,slot-name", 
-            Buffer (0x0C)
+            Name (_ADR, 0x00020000)  // _ADR: Address
+            Device (TBLU)
             {
-                "PCI-Express"
-            }, 
+                Name (_ADR, Zero)  // _ADR: Address
+                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                {
+                    If ((Arg2 == Zero))
+                    {
+                        Return (Buffer (One)
+                        {
+                             0x03                                             // .
+                        })
+                    }
 
-            "device_type", 
-            Buffer (0x15)
-            {
-                "Intel HDMI controler"
-            }, 
+                    Return (Package (0x06)
+                    {
+                        "AAPL,slot-name", 
+                        Buffer (0x0E)
+                        {
+                            "PCI-Express@3"
+                        }, 
 
-            "model", 
-            Buffer (0x2F)
-            {
-                "Intel Corporation HD 630 HDMI Audio Controller"
-            }, 
+                        "device_type", 
+                        Buffer (0x11)
+                        {
+                            "Thunderbolt XHCI"
+                        }, 
 
-            "layout-id", 
-            Buffer (0x04)
-            {
-                 0x0B, 0x00, 0x00, 0x00                         
-            }, 
-
-            "hda-gfx", 
-            Buffer (0x0A)
-            {
-                "onboard-1"
+                        "model", 
+                        Buffer (0x25)
+                        {
+                            "Thunderbolt 3 JHL6340 XHCI controller"
+                        }
+                    })
+                }
             }
-        })
+        }
     }
 
     Method (_SB.PCI0.HDEF._DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
     {
-        If (LEqual (Arg2, Zero))
+        If ((Arg2 == Zero))
         {
             Return (Buffer (One)
             {
-                 0x03                                           
+                 0x03                                             // .
             })
         }
 
@@ -152,7 +183,7 @@ DefinitionBlock ("", "SSDT", 2, "hack", "PCI-RJ", 0x00000000)
             "layout-id", 
             Buffer (0x04)
             {
-                 0x0B, 0x00, 0x00, 0x00                         
+                 0x0B, 0x00, 0x00, 0x00                           // ....
             }, 
 
             "hda-gfx", 
@@ -165,11 +196,11 @@ DefinitionBlock ("", "SSDT", 2, "hack", "PCI-RJ", 0x00000000)
 
     Method (_SB.PCI0.IGPU._DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
     {
-        If (LEqual (Arg2, Zero))
+        If ((Arg2 == Zero))
         {
             Return (Buffer (One)
             {
-                 0x03                                           
+                 0x03                                             // .
             })
         }
 
@@ -197,11 +228,11 @@ DefinitionBlock ("", "SSDT", 2, "hack", "PCI-RJ", 0x00000000)
 
     Method (_SB.PCI0.IMEI._DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
     {
-        If (LEqual (Arg2, Zero))
+        If ((Arg2 == Zero))
         {
             Return (Buffer (One)
             {
-                 0x03                                           
+                 0x03                                             // .
             })
         }
 
@@ -216,24 +247,24 @@ DefinitionBlock ("", "SSDT", 2, "hack", "PCI-RJ", 0x00000000)
             "device_type", 
             Buffer (0x0F)
             {
-                "IMEI controler"
+                "IMEI controller"
             }, 
 
             "model", 
             Buffer (0x21)
             {
-                "Intel Corporation IMEI controler"
+                "Intel Corporation IMEI controller"
             }
         })
     }
 
     Method (_SB.PCI0.PMCR._DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
     {
-        If (LEqual (Arg2, Zero))
+        If ((Arg2 == Zero))
         {
             Return (Buffer (One)
             {
-                 0x03                                           
+                 0x03                                             // .
             })
         }
 
@@ -248,24 +279,24 @@ DefinitionBlock ("", "SSDT", 2, "hack", "PCI-RJ", 0x00000000)
             "device_type", 
             Buffer (0x17)
             {
-                "Power Manage controler"
+                "Power Manage controller"
             }, 
 
             "model", 
             Buffer (0x20)
             {
-                "Intel Corporation PMC controler"
+                "Intel Corporation PMC controller"
             }
         })
     }
 
     Method (_SB.PCI0.RP05.ENET._DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
     {
-        If (LEqual (Arg2, Zero))
+        If ((Arg2 == Zero))
         {
             Return (Buffer (One)
             {
-                 0x03                                           
+                 0x03                                             // .
             })
         }
 
@@ -287,22 +318,20 @@ DefinitionBlock ("", "SSDT", 2, "hack", "PCI-RJ", 0x00000000)
 
     Method (_SB.PCI0.RP06.ARPT._DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
     {
-        If (LEqual (Arg2, Zero))
+        If ((Arg2 == Zero))
         {
             Return (Buffer (One)
             {
-                 0x03                                           
+                 0x03                                             // .
             })
         }
 
-        Return (Package (0x08)
+        Return (Package (0x06)
         {
-            "compatible", 
-            "pci14e4,43a0", 
             "device_type", 
             Buffer (0x13)
             {
-                "Wireless controler"
+                "Wireless controller"
             }, 
 
             "AAPL,slot-name", 
@@ -321,11 +350,11 @@ DefinitionBlock ("", "SSDT", 2, "hack", "PCI-RJ", 0x00000000)
 
     Method (_SB.PCI0.RP09.NVME._DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
     {
-        If (LEqual (Arg2, Zero))
+        If ((Arg2 == Zero))
         {
             Return (Buffer (One)
             {
-                 0x03                                           
+                 0x03                                             // .
             })
         }
 
@@ -347,11 +376,11 @@ DefinitionBlock ("", "SSDT", 2, "hack", "PCI-RJ", 0x00000000)
 
     Method (_SB.PCI0.SATA._DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
     {
-        If (LEqual (Arg2, Zero))
+        If ((Arg2 == Zero))
         {
             Return (Buffer (One)
             {
-                 0x03                                           
+                 0x03                                             // .
             })
         }
 
@@ -373,11 +402,11 @@ DefinitionBlock ("", "SSDT", 2, "hack", "PCI-RJ", 0x00000000)
 
     Method (_SB.PCI0.SBUS._DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
     {
-        If (LEqual (Arg2, Zero))
+        If ((Arg2 == Zero))
         {
             Return (Buffer (One)
             {
-                 0x03                                           
+                 0x03                                             // .
             })
         }
 
@@ -392,18 +421,18 @@ DefinitionBlock ("", "SSDT", 2, "hack", "PCI-RJ", 0x00000000)
             "model", 
             Buffer (0x21)
             {
-                "Intel Corporation SBUS controler"
+                "Intel Corporation SBUS controller"
             }
         })
     }
 
     Method (_SB.PCI0.XHC._DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
     {
-        If (LEqual (Arg2, Zero))
+        If ((Arg2 == Zero))
         {
             Return (Buffer (One)
             {
-                 0x03                                           
+                 0x03                                             // .
             })
         }
 
