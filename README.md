@@ -78,12 +78,12 @@ CPU:Intel  i7-7700hq
 此配置config兼容两种启动方式
 A：win10下fn+f7 以核显启动-双显卡模式（个人推荐）
 原生驱动I7-7700HQ HD630 / webdriver 驱动nvidia 1060
-（外接hdmi显示器连接1060视频输出正常，hdmi声音不出声，内屏连接hd630输出正常，HDMI热拔插正常，thunderbolt未测试）
+（外接hdmi显示器连接1060视频输出正常，hdmi声音不出声（已修复），内屏连接hd630输出正常，HDMI热拔插正常，thunderbolt未测试）
 
 
 B：win10下fn+f7 以独显启动-单独显模式
 HD630貌似被屏蔽 / webdriver 驱动nvidia 1060
-（外接hdmi显示器和内屏连接1060视频输出正常，有个问题插着hdmi启动会黑屏，不插hdmi启动正常，HDMI热拔插正常，hdmi声音不出声，thunderbolt/dp未测试）
+（外接hdmi显示器和内屏连接1060视频输出正常，有个问题插着hdmi启动会黑屏，不插hdmi启动正常，HDMI热拔插正常，hdmi声音不出声（已修复），thunderbolt/dp未测试）
 
 
 声卡 网卡 电池 USB 蓝牙/摄像头 ALIENFX灯光 睡眠 cpu变频 （和第一部分相同）
@@ -134,6 +134,8 @@ HD630貌似被屏蔽 / webdriver 驱动nvidia 1060
         01050900 00080000 87010000 
         1-hdmi
         
+10/24更新 修复hdmi声音输出
+        
 clover美化贴:http://bbs.pcbeta.com/viewthread-1725492-1-1.html
 http://bbs.pcbeta.com/viewthread-1724405-1-1.html
 http://bbs.pcbeta.com/viewthread-1770623-1-1.html
@@ -154,7 +156,7 @@ PS：
  
 
 Q1：cpu必须使用这个VoodooTSCSync.kext才能正常使用，否则进入系统响应超慢，请问这个问题有解吗？
-Q2: hdmi声音至今未搞定
+Q2: hdmi声音至今未搞定（已修复）
 Q3: 未驱动硬件
 ![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/drv.png)
 
