@@ -1,8 +1,10 @@
 # Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra 10.13.6 【Dual Graphics】
 
-http://bbs.pcbeta.com/viewthread-1761528-1-1.html
+[中文版](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/README.md)|||[English](https://github.com/RockJesus/Alienware-17-R4-Dual-GPU-MacOS-Mojave-10.14-Hackintosh/blob/master/README.md)
 
-配置
+# http://bbs.pcbeta.com/viewthread-1761528-1-1.html
+
+# 配置
 Alienware 17 R4
 bios版本1.2.4
 CPU:Intel  i7-7700hq
@@ -12,13 +14,15 @@ CPU:Intel  i7-7700hq
 声卡：alc298
 网卡：killer e2500 (wifi 更换为dw1560-bcm94352z )
 
-成功驱动「HD630+nvidia 1060双显卡」声卡网卡，满足日常使用（双显卡模式请看第二部分）
+# 成功驱动「HD630+nvidia 1060双显卡」声卡网卡，满足日常使用（双显卡模式请看第二部分）
+![image](https://github.com/RockJesus/Alienware-17-R4-Dual-GPU-MacOS-Mojave-10.14-Hackintosh/blob/master/tony/30846964424404cb8b69890eb.jpg)
+![image](https://github.com/RockJesus/Alienware-17-R4-Dual-GPU-MacOS-Mojave-10.14-Hackintosh/blob/master/tony/laptop-alienware-17-mlk-pdp-4.jpg)
 ![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/about.png)
 ![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/des.png)
-![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/pci.png)
+![image](https://github.com/RockJesus/Alienware-17-R4-Dual-GPU-MacOS-Mojave-10.14-Hackintosh/blob/master/tony/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-28%20%E4%B8%8B%E5%8D%884.03.16.png)
 
 ------------------------------------------------------------------------------------------------------------------------------
-第一部分（核显模式）
+# 第一部分（核显模式）
 
 只能在win10下fn+f7以核显模式启动 ，独显模式启动会黑屏
 使用情况
@@ -68,7 +72,7 @@ CPU:Intel  i7-7700hq
 
 
 
-第二部分 （双显卡模式&单独显模式）
+# 第二部分 （双显卡模式&单独显模式）
 特别感谢@【解】小天
 
 
@@ -76,12 +80,12 @@ CPU:Intel  i7-7700hq
 
 
 此配置config兼容两种启动方式
-A：win10下fn+f7 以核显启动-双显卡模式（个人推荐）
+#### A：win10下fn+f7 以核显启动-双显卡模式（个人推荐）
 原生驱动I7-7700HQ HD630 / webdriver 驱动nvidia 1060
 （外接hdmi显示器连接1060视频输出正常，hdmi声音不出声（已修复），内屏连接hd630输出正常，HDMI热拔插正常，thunderbolt未测试）
 
 
-B：win10下fn+f7 以独显启动-单独显模式
+#### B：win10下fn+f7 以独显启动-单独显模式
 HD630貌似被屏蔽 / webdriver 驱动nvidia 1060
 （外接hdmi显示器和内屏连接1060视频输出正常，有个问题插着hdmi启动会黑屏，不插hdmi启动正常，HDMI热拔插正常，hdmi声音不出声（已修复），thunderbolt/dp未测试）
 
@@ -94,7 +98,7 @@ HD630貌似被屏蔽 / webdriver 驱动nvidia 1060
 
 两部分三种启动方式优缺点自行斟酌
 ------------------------------------------------------------------------------------------------------------------------------
-2楼
+# 2楼 更新日志
 
 10/7更新 亮度保存  
 
@@ -143,8 +147,8 @@ http://bbs.pcbeta.com/viewthread-1766401-1-1.html
 声卡帖子：http://bbs.pcbeta.com/viewthread-1729541-1-1.html
 鼠标主题：http://bbs.pcbeta.com/viewthread-1766401-1-1.html
 
-PS：
-  8.mac下修改键盘灯方法 http://bbs.pcbeta.com/viewthread-1780839-1-1.html
+# PS：
+  mac下修改键盘灯方法 http://bbs.pcbeta.com/viewthread-1780839-1-1.html
 
   更新10.13.4后发现不用屏蔽独显了，也不需修改或添加edid文件，睡眠完美，又省了两步，不错！  
   
@@ -163,6 +167,6 @@ Q3: 未驱动硬件
 问题多多不够完美，要完善的地方还有很多，慢慢更新吧
 寻找机油一起研究 QQ群: 308469644
 
-*************** BUY ME A COFFEE *********************************************************
+# *************** BUY ME A COFFEE *********************************************************
 ![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/wx.jpeg)
 ![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/zfb.jpeg)
