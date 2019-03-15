@@ -171,5 +171,6 @@ Q3: 未驱动硬件
 寻找机油一起研究 QQ群: 308469644
 
 # *************** BUY ME A COFFEE *********************************************************
-![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/wx.jpeg)
-![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/zfb.jpeg)
+| 支付宝                                                                                                                                                              | 微信                                               |
+| ----------------------------------------------------------   | ---------------------------------------------------- |
+| ![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/zfb.jpeg) | ![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/wx.jpeg) | 
