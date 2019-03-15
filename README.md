@@ -2,6 +2,9 @@
 
 [中文版](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/README.md)|||[English](https://github.com/RockJesus/Alienware-17-R4-Dual-GPU-MacOS-Mojave-10.14-Hackintosh/blob/master/README.md)
 
+# 此仓库停止更新，最新兼容10.13/14更新请前往
+https://github.com/RockJesus/Alienware-17-R4-Dual-GPU-MacOS-Mojave-10.14-Hackintosh
+
 # http://bbs.pcbeta.com/viewthread-1761528-1-1.html
 
 # 配置

@@ -5,13 +5,13 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLTrCvjx.aml, Tue Oct 23 18:37:38 2018
+ * Disassembly of iASLNq8uKZ.aml, Sat Dec 22 09:52:16 2018
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x00000078 (120)
+ *     Length           0x000000B5 (181)
  *     Revision         0x02
- *     Checksum         0x1D
+ *     Checksum         0x0C
  *     OEM ID           "hack"
  *     OEM Table ID     "HDAU"
  *     OEM Revision     0x00000000 (0)
@@ -20,34 +20,25 @@
  */
 DefinitionBlock ("", "SSDT", 2, "hack", "HDAU", 0x00000000)
 {
-    External (_SB_.PCI0.PEG0.GFX0, DeviceObj)
     External (_SB_.PCI0.PEG0, DeviceObj)
+    External (_SB_.PCI0.PEG0.NHDA, UnknownObj)
+    External (_SB_.PCI0.PEG0.PEGP.NHDA, FieldUnitObj)
+    External (AR01, UnknownObj)
+    External (PICM, UnknownObj)
+    External (PR01, UnknownObj)
 
-    Method (_SB.PCI0.PEG0._PRT)
+    Scope (_SB.PCI0.PEG0)
     {
-        
-            
-            ^GFX0.NHDA = One
-        
-    }
-    
-    Scope (_SB.PCI0.PEG0.GFX0)
-    {
-        
-            
-            Name (HDAU, Zero)
-            OperationRegion (PCI2, SystemMemory, 0xE0100000, 0x0500)
-            Field (PCI2, DWordAcc, Lock, Preserve)
+        Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
+        {
+            ^PEGP.NHDA = One
+            If (PICM)
             {
-                Offset (0x48B), 
-                    ,   1, 
-                NHDA,   1
+                Return (AR01) /* External reference */
             }
-        
+
+            Return (PR01) /* External reference */
+        }
     }
-    
-    
-
-
 }
 
