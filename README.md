@@ -170,7 +170,16 @@ Q3: 未驱动硬件
 问题多多不够完美，要完善的地方还有很多，慢慢更新吧
 寻找机油一起研究 QQ群: 308469644
 
-# *************** BUY ME A COFFEE *********************************************************
+# 其他外星人机型请前往：https://github.com/RockJesus/Alienware-Hackintosh
+
+# 欢迎来我的博客：https://rockjesus.github.io/
+
+| 外星人黑苹果QQ群：308469644                                                                                                                                                              | 
+| ----------------------------------------------------------   | 
+| ![image](https://github.com/RockJesus/Alienware-17-R4-Dual-GPU-MacOS-Mojave-10.14-Hackintosh/blob/master/qq.png?raw=true) |
+
+
+# *************** BUY ME A COFFEE ***************
 | 支付宝                                                                                                                                                              | 微信                                               |
 | ----------------------------------------------------------   | ---------------------------------------------------- |
 | ![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/zfb.jpeg) | ![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/wx.jpeg) | 
