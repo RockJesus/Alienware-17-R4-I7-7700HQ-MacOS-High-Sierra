@@ -1,5 +1,7 @@
 # Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra 10.13.6 【Dual Graphics】
 
+[![Platform](https://img.shields.io/badge/platform-macOS-red.svg)](https://developer.apple.com/macos)
+
 [中文版](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/README.md)|||[English](https://github.com/RockJesus/Alienware-17-R4-Dual-GPU-MacOS-Mojave-10.14-Hackintosh/blob/master/README.md)
 
 # 此仓库停止更新，最新兼容10.13/14更新请前往
