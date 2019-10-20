@@ -182,6 +182,6 @@ Q3: 未驱动硬件
 
 
 # *************** BUY ME A COFFEE ***************
-| 支付宝                                                                                                                                                              | 微信                                               |
-| ----------------------------------------------------------   | ---------------------------------------------------- |
-| ![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/zfb.jpeg) | ![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/wx.jpeg) | 
+| 支付宝                                                                                                                                                              | 微信                                               | 赞赏码                                               |
+| ----------------------------------------------------------   | ---------------------------------------------------- | ---------------------------------------------------- |
+| ![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/zfb.jpeg) | ![image](https://github.com/RockJesus/Alienware-17-R4-I7-7700HQ-MacOS-High-Sierra/blob/master/wx.jpeg) |  ![image](https://github.com/RockJesus/Alienware-17-R4-Dual-GPU-MacOS-10.15-14-13-Hackintosh/blob/master/zsm.png?raw=true) | 
