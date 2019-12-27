@@ -12,7 +12,7 @@ https://github.com/RockJesus/Alienware-17-R4-Dual-GPU-MacOS-Mojave-10.14-Hackint
 
 # 配置
 Alienware 17 R4
-bios版本1.2.4
+bios版本1.8.0
 CPU:Intel  i7-7700hq
 显卡:Intel HD630 /  Nvidia GeForce GT 1060
 内存:16g
@@ -176,7 +176,8 @@ Q3: 未驱动硬件
 # 其他外星人机型请前往：https://github.com/RockJesus/Alienware-Hackintosh
 
 # 欢迎来我的博客：https://rockjesus.github.io/
-
+![image](https://github.com/RockJesus/Alienware-17-R4-Dual-GPU-MacOS-10.15-14-13-Hackintosh/blob/master/tony/%E5%BE%AE%E4%BF%A1%E5%9C%88%E5%AD%90.jpeg?raw=true)
+![image](https://github.com/RockJesus/Alienware-17-R4-Dual-GPU-MacOS-10.15-14-13-Hackintosh/blob/master/tony/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.png?raw=true)
 # ************ BUY ME A COFFEE & JOIN US ************
 | 外星人黑苹果QQ群：308469644                                                                                                                                                              | 支付宝打赏                                                                                                                                                              | 微信打赏                                                                                                                                                              |  微信赞赏                                                                                                                                                              | 
 | ----------------------------------------------------------   | ----------------------------------------------------------   | ----------------------------------------------------------   |  ----------------------------------------------------------   | 
