@@ -24,10 +24,10 @@ CPU:Intel  i7-7700hq
 # 成功驱动「HD630+nvidia 1060双显卡」声卡网卡，满足日常使用（双显卡模式请看第二部分）
 
 ![laptop-alienware-17-mlk-pdp-4](https://user-images.githubusercontent.com/23656651/111027153-5f294d80-8429-11eb-9922-f1768ec1244b.jpg)
-![截屏2021-03-13 下午6 26 56](https://user-images.githubusercontent.com/23656651/111027208-baf3d680-8429-11eb-9a47-2bfbc1ca5c02.png)
-<img width="906" alt="屏幕快照 2018-10-28 下午4 03 16" src="https://user-images.githubusercontent.com/23656651/111027158-67818880-8429-11eb-811c-0d40a11eb3cd.png">
-
-
+![about](https://user-images.githubusercontent.com/23656651/111027292-584f0a80-842a-11eb-9b85-3c5dce6fc18e.png)
+![des](https://user-images.githubusercontent.com/23656651/111027293-5b49fb00-842a-11eb-9d5e-930d99636d5b.png)
+![drv](https://user-images.githubusercontent.com/23656651/111027297-5edd8200-842a-11eb-971c-655e5c1b83de.png)
+![pci](https://user-images.githubusercontent.com/23656651/111027298-5f761880-842a-11eb-8806-1ab5ffdd7fb4.png)
 ------------------------------------------------------------------------------------------------------------------------------
 # 第一部分（核显模式）
 
